@@ -1,0 +1,50 @@
+//Provide a variable to hold the callback function
+var notifyCallBack;
+
+function showNotification(message, type, callback) {
+
+    notifyCallBack = callback;
+
+    var notification = $("#notification");
+    notification.removeClass("success notice error");
+    notification.addClass(type);
+
+    //Make sure it's visible even when top of the page not visible
+    notification.css("top", $(window).scrollTop());
+    notification.css("width", $(document).width());
+
+    $("#notification-text").html(message);
+
+    //show the notification
+    notification.slideDown("slow", function() {
+        setTimeout(hideNotification,
+            4000 // 4 seconds
+            )
+    });
+}
+
+function hideNotification() {
+    $("#notification").slideUp("slow", function() {
+        if (null != notifyCallBack && (typeof notifyCallBack == "function")) {
+            notifyCallBack();
+        }
+        //reset the callback variable
+        notifyCallBack = null
+    });
+}
+
+$(form).ajaxSubmit({
+		success: function(data) {
+			if (true == data.isSuccessful){
+				showNotification(data.FlashMessage, "success", function(){
+					//do something
+				});
+			}
+			else{
+				showNotification(data.ErrorMessage, "error", function(){
+					//display errors
+				});
+			}
+		},
+		dataType: "json"
+	});

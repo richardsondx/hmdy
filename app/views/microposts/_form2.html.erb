@@ -1,0 +1,16 @@
+<div id="textfield">
+		<%= form_for @micropost do |f| %>
+    	<%= f.text_field :content, :size => 90 , :class => "inputtext", :placeholder => "What's worth sharing?"%> <br/>
+
+</div>
+<span>You have <span id="charsLeft"></span> chars left.</span>
+<script>
+
+$('.inputtext').limit('140','#charsLeft');
+
+</script>
+<div id="buttons">
+	<%= image_submit_tag("guys_button.png", :name => "commit", :value => "Submit")%>
+	<%= image_submit_tag( "girls_button.png",:name => "commit", :value => "Submit")%>
+</div>
+	<% end %>

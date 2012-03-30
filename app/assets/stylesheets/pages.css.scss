@@ -1,0 +1,144 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    font-size: 100%;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    vertical-align: baseline;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none outside none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: none;
+}
+:focus {
+    outline: 0 none;
+}
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+body {
+    background: none repeat scroll 0 0 white;
+}
+#background {
+    background: url("background.png") repeat scroll 0 0 transparent;
+    height: 975px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+}
+nav .twitter-follow-button {
+   	float: right;
+	position: relative;
+    right: 30px;
+}
+div#header {
+    height: 170px;
+    position: relative;
+    top: 51px;
+}
+div#header #title {
+    position: relative;
+    top: 10px;
+}
+div#header div#box {
+    width: 580px;
+}
+div#boxheader {
+    height: 138px;
+    position: relative;
+    width: 480px;
+}
+div#header div#textfield {
+    background-image: url("boxybackground.png");
+    height: 66px;
+    margin-top: 30px;
+    overflow: hidden;
+    padding-top: 18px;
+    position: relative;
+    width: 960px;
+}
+.inputtext {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    font: 30px Tahoma,Helvetica,Arial,Sans-Serif;
+    height: 50px;
+    width: 470px;
+}
+#buttons img {
+    margin: 13px 10px;
+}
+#container {
+    background: url("content-background.png") repeat scroll 0 0 transparent;
+    height: 555px;
+    position: relative;
+    top: 300px;
+}
+#separator {
+    background-image: url("whatpeoplesay.png");
+    color: white;
+    height: 33px;
+    margin-bottom: 10px;
+    text-indent: -9999px;
+}
+#section {
+    height: 479px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 615px;
+}
+.article ul {
+}
+.article ul li {
+    
+  	display: inline-block;
+  	float: left;
+  	margin-top: 9px;
+  	height: 60px;
+}
+.article li p {
+    
+  	height: 50px;
+  	margin-left: 10px;
+  	margin-right: 20px;
+  	padding: 5px 10px;
+  	width: 400px;
+	background: white;
+}
+.article li.fbshare{
+   
+   height: 60px;
+}
+.article li .twitter-share-button {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  
+}
+
+div#paginkamari {
+  color: white;
+  position: relative;
+  top: 20px;
+}
+
+div#paginkamari a{
+    color: white;
+}

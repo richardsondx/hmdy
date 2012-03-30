@@ -1,0 +1,41 @@
+<div id="header" align="center">
+	<div id="box">
+		<div id="boxheader">
+		   <%= image_tag('logo.png', :id => 'mainlogo' )%>
+           <%= image_tag('sharetips.png', :id => 'title' )%>
+        </div>
+	</div>
+		<% @micropost = Micropost.new %>
+		<%= render  :partial => 'microposts/form2', :locals => { :micropost => @micropost, :commit => "to Guys" } %>
+		<%= debug(params) if Rails.env.development? %>
+	 
+	<div id="who_needs_to_know"><%= image_tag("who_need_to_know.png")%></div>
+
+</div>
+
+<!-- BEGINNING of CONTAINER here-->
+<div id="container">
+	<div id="separator"><p>What People Are Saying</p></div>
+                    <div id="section">
+                        <!-- Girl Post-->
+						<% for micropost in @microposts %>
+                        <span class="article">
+                             <ul>
+	
+                             <li class="headshot"><%= image_tag("#{ micropost.to_guys ? "guys" : "girl" }-head.png") %></li>
+                             <li class="tipscontent"><p><%= micropost.content %> + <%= micropost.to_guys%></p></li>
+                             <li class="fbshare"><a href="https://twitter.com/share" class="twitter-share-button" data-text="<%=micropost.content%>" data-hashtags="hmdy">Tweet</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>                           
+                             </ul>
+						</span>
+						<% end %>
+						<div id="paginkamari" align="center"><p><%= paginate @microposts %></p></div>
+                    </div>
+					<div id="footer">
+						<p>About Advertising Contact us</p>
+					</div>
+	
+        </div>
+
+
+<!-- END of CONTAINER here-->

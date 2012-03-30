@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  to_guys: false
+  tag: MyString
+  approved: false
+  content: MyString
+  flag: false
+  liked: false
+
+two:
+  to_guys: false
+  tag: MyString
+  approved: false
+  content: MyString
+  flag: false
+  liked: false

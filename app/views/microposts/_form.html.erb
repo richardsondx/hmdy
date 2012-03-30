@@ -1,0 +1,14 @@
+<%= form_for @micropost do |f| %>
+  <p>
+    <fieldset>
+	<legend> What's your Tip? </legend>
+    <%= f.text_field :content, :size => 90 %> <br/>
+
+    <%= f.label :tag %>
+    <%= f.select( :tag, [['#texting', 1], ['#dating', 2], ['#sex', 3], ['#beauty', 4]]) %>
+    <%= f.label "Send this Tip:" %>
+    <%= submit_tag "to Guys" %>
+    <%= submit_tag "to Girls"%>
+    </p>
+    </fieldset>
+<% end %>

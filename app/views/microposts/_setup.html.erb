@@ -1,0 +1,16 @@
+<%= form_for @micropost do |f| %>
+  <p>
+    This is TrueTips <%= f.id %>
+    <%= f.text_field :content, :size => 90 %> <br/>
+
+    <%= f.label :to_guys %>
+    <%= f.check_box :to_guys %>
+    
+    <%= f.label :tag %>
+    <%= f. %>
+    
+    <%= f.label :approved %>
+    <%= f.check_box :approved %>
+    
+    <%= f.submit %></p>
+<% end %>

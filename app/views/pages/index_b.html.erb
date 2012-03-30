@@ -1,0 +1,43 @@
+<div id="container">
+	<!-- CONTAINER LEFT -->
+	<div id="container_left">
+	    <span id="containerleft">
+	      <div id="leftbox">
+              <div id="greybar">
+	            <div id="tipstite"><h2>tips and advices</h2></div>
+	           	<div id="articles">
+	                <ol>
+
+						<% for micropost in @microposts %>
+	                    <li><span class="homepost">
+	                    	<br/><%= micropost.id %></br>
+							<!-- This part call the page/:id that is connected to microposts/display/:id -->
+							<td><%= link_to micropost.content, page_path(micropost) %> </td>
+	                    </span></li>
+                 <!--   <li><span class="homepost2"></span></li>  -->
+						<% end %>
+    
+                     </ol>
+                </div>
+	            <div id="cloud"><%= image_tag("home_cloud2.png")%></div>
+	            <div><%= link_to image_tag('home_button_viewmore.png', :class => "button"),"#",:class => "viewmorepost"%></div>
+	        </div>
+           </div>
+	    </span>
+	
+	<!-- CONTAINER RIGHT -->
+	    <span id="containerright">
+		<div class="logo"><%= image_tag("home_logo.png")%></div>
+	       	<% @micropost = Micropost.new %>
+			<%= render  :partial => 'microposts/form2', :locals => { :micropost => @micropost } %>
+		</div>
+	<!-- CONTAINER END-->
+
+</div> <!-- end of container div -->
+
+
+<!-- FOOTER BEGINNING -->
+<div id="footer">
+	<!-- Social Plugin: Facebook Like Button-->
+	<div class="fblike" data-href="http://www.helpmedateyou.com" data-send="false" data-width="450" data-show-faces="true"></div>
+</div>

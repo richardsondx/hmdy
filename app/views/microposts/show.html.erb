@@ -1,0 +1,32 @@
+<h1>Microposts#show</h1>
+<p>Find me in app/views/microposts/show.html.erb</p>
+<p>
+  <strong>Tellmewhatyouthink #:</strong>
+  <%= @micropost.id %>
+</p>
+<p>
+  <strong>content:</strong>
+  <%= @micropost.content %>
+</p>
+<p>
+  <strong>tag:</strong>
+  <%= @micropost.tag %>
+</p>
+<p>
+  <strong>to_guys?:</strong>
+  <%= @micropost.to_guys %>
+</p>
+
+
+<p>
+  <%= link_to "Edit", edit_micropost_path(@micropost) %> |
+  <%= link_to "Destroy", @micropost, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", microposts_path %>
+</p>
+
+<div class="fb-comments" data-href="http://localhost:3000/micropost/<%= @micropost.id %>" data-num-posts="4" data-width="470"></div>
+
+
+
+
+
