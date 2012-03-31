@@ -1,6 +1,5 @@
 class MicropostsController < ApplicationController
-  before_filter :authenticate
-
+    before_filter :authenticate , :except => [ :create, :new ]
 
   def index
     @microposts = Micropost.all
