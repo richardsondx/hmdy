@@ -1,8 +1,10 @@
-<h1>Microposts#show</h1>
-<p>Find me in app/views/microposts/show.html.erb</p>
+<h1>Microposts#show</h1><Br/>
 <p>
-  <strong>Tellmewhatyouthink #:</strong>
-  <%= @micropost.id %>
+  <% unless microposts.to_guys == "girls"%>
+  	<strong>Tips  #<%= @micropost.id %> for guys:</strong>
+  <% else %>
+	<strong>Tips  #<%= @micropost.id %> for girls:</strong>
+  <% end%>
 </p>
 <p>
   <strong>content:</strong>
@@ -16,7 +18,6 @@
   <strong>to_guys?:</strong>
   <%= @micropost.to_guys %>
 </p>
-
 
 <p>
   <%= link_to "Edit", edit_micropost_path(@micropost) %> |
