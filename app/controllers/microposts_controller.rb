@@ -16,7 +16,7 @@ class MicropostsController < ApplicationController
   end
   
   def new
-    @micropost = Micropost.new(:tag => '4' )
+    @micropost = Micropost.new(:tag => '5' )
   end
 
   def create
