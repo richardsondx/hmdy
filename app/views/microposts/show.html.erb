@@ -1,10 +1,10 @@
 <h1>Microposts#show</h1><Br/>
 <p>
-  <% unless microposts.to_guys == "girls"%>
+  <% unless @micropost.to_guys == false %>
   	<strong>Tips  #<%= @micropost.id %> for guys:</strong>
   <% else %>
 	<strong>Tips  #<%= @micropost.id %> for girls:</strong>
-  <% end%>
+  <% end%>s
 </p>
 <p>
   <strong>content:</strong>
@@ -12,7 +12,7 @@
 </p>
 <p>
   <strong>tag:</strong>
-  <%= @micropost.tag %>
+  <%= @micropost.tag %> 
 </p>
 <p>
   <strong>to_guys?:</strong>

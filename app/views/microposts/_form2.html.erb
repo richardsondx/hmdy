@@ -10,7 +10,7 @@ $('.inputtext').limit('140','#charsLeft');
 
 </script>
 <div id="buttons">
-	<%= image_submit_tag("guys_button.png", :name => "commit", :value => "Submit")%>
-	<%= image_submit_tag( "girls_button.png",:name => "commit", :value => "Submit")%>
+	<%= f.submit "to Guys", :class => "toguys" %>
+    <%= f.submit "to Girls", :class => "togirls"%>
 </div>
 	<% end %>

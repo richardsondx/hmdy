@@ -1,7 +1,7 @@
 class MicropostsController < ApplicationController
    # html basic authentification system for the admin session
-    before_filter :authenticate , :except => [ :create, :new, :delete, :show]
-
+    #before_filter :authenticate , :except => [ :create, :new, :delete, :show]
+    
   def index
     @microposts = Micropost.all
     @micropost = Micropost.new(:tag => '4')
@@ -21,19 +21,19 @@ class MicropostsController < ApplicationController
 
   def create
     @micropost = Micropost.new(params[:micropost])
-
-    if params["commit"] == "to Guys" or params[:value] == "A"
-       @micropost.update_attribute(:to_guys, true)
-       flash[:notice] = "to Guys was clicked and the boolean is updated"
-    else
-       @micropost.update_attribute(:to_guys, false)
-    end
+    
+    @micropost.to_guys = params["commit"] == "to Guys"
+    #    @micropost.to_guys = true
+    #    flash[:notice] = "to Guys was clicked and the boolean is updated"
+    # else
+    #    @micropost.to_guys = false
+    # end
 
     if @micropost.save
       redirect_to(:back)
       flash[:notice] = "Thanks! You have successfully posted this Micropost."
     else
-      render :action => 'new'
+      redirect_to(:back)
       flash[:notice] = "Something went wrong. You're Micropost wasn't created"
     end
   end
@@ -72,4 +72,6 @@ class MicropostsController < ApplicationController
     end
   end
   
+
+
  end

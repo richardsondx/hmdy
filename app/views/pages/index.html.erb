@@ -6,7 +6,7 @@
         </div>
 	</div>
 		<% @micropost = Micropost.new %>
-		<%= render  :partial => 'microposts/form2', :locals => { :micropost => @micropost, :commit => "to Guys" } %>
+		<%= render  :partial => 'microposts/form2', :locals => { :micropost => @micropost } %>
 		<%= debug(params) if Rails.env.development? %>
 	 
 	<div id="who_needs_to_know"><%= image_tag("who_need_to_know.png")%></div>
@@ -23,9 +23,13 @@
                              <ul>
 	
                              <li class="headshot"><%= image_tag("#{ micropost.to_guys ? "guys" : "girl" }-head.png") %></li>
-                             <li class="tipscontent"><p><%= micropost.content %> + <%= micropost.to_guys%></p></li>
-                             <li class="fbshare"><a href="https://twitter.com/share" class="twitter-share-button" data-text="<%=micropost.content%>" data-hashtags="hmdy">Tweet</a>
-							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>                           
+                             <li class="tipscontent"><p><%= link_to micropost.content, page_path(micropost) %></p></li>
+                             <li class="fbshare">
+	
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="twitterapi" data-lang="en" data-hashtags="hmdy">Tweet</a>					
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","#{micropost.id}"});</script>
+							
+							</li>                           
                              </ul>
 						</span>
 						<% end %>
