@@ -3,11 +3,9 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 
-# $('#inputtext').limit('140','#charsLeft');
+$('#inputtext').limit('140','#charsLeft');
 
-# JQuery ->
-#	$(window).scroll ->
-#	if $(window).scrollTop() > $(document).height() - $(window).height() - 50 
-	
-#	$.getScript('.pagination .next_page').attr('href')
-
+#jQuery ->
+#  $(window).scroll ->
+#    if $(window).scrollTop() > $(document).height() - $(window).height() - 50
+#      $.getScript($('.pagination .next_page').attr('href'))

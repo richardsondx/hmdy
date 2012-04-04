@@ -11,7 +11,7 @@ class PagesController < ApplicationController
 
   def index
     @title = "Home"
-    @microposts = Micropost.order("created_at").page(params[:page]).per(6)
-    
+    @microposts = Micropost.paginate(:page => params[:page], :per_page => 10)
+   # @microposts = Micropost.order("created_at").page(params[:page]).per(6)
   end
 end

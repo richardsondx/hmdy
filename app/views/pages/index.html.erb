@@ -16,30 +16,48 @@
 <!-- BEGINNING of CONTAINER here-->
 <div id="container">
 	<div id="separator"><p>What People Are Saying</p></div>
-                    <div id="section">
-						<table>
-							<thead>
-								<tr>
-					 	  	   	  <th><h2>Who?</h2><th>
-					 	  	   	  <th><h2>What they said?</h2><th>
-					 	  	   	  <th><h2></h2><th>
-								<tr>
-							<thead>
-							<tbody id="microposts">
-								<tr>
-								<% for micropost in @microposts %>
-								   <td class="tdeux"><div class="head1"><%= image_tag("#{ micropost.to_guys ? "guys" : "girl" }-head.png") %></div><td>
-								   <td valign="top"><p class="peopleposts"><%= link_to micropost.content, page_path(micropost) %></p><td>
-								   <td class="td2"><div class="share1"><%= tweet_button(:via => "hmdy", :url => "http://localhost:3000/pages/#{micropost.id}", :text => "#{@micropost.content}", :lang => "en", :related => "helpmedateyou", :class => "share2") %></div><td>
-								<tr>
-								<% end %>
-							<tbody>
-						</table>
-						<b><div id="paginkamari" align="center"><%= paginate @microposts %> <br/></div></b>
-						<div id="empty"></div>
-                    </div>
-
-	
+		<div id="section">
+			<table>
+				<thead>
+					<tr>
+				   	  <th><h2>Who?</h2></th>
+				   	  <th><h2>What they said?</h2></th>
+				   	  <th><h2></h2></th>
+					<tr/>
+				</thead>
+				<div id="microposts">
+					<tbody>
+						
+						<% for micropost in @microposts %>
+						<tr>
+							<td class="tdeux">
+								<div class="head1"><%= image_tag("#{ micropost.to_guys ? "guys" : "girl" }-head.png") %></div>
+							</td>
+							<td valign="top">
+								<p class="peopleposts"><%= link_to micropost.content, page_path(micropost) %></p>
+							</td>
+							<td class="td2">
+								<div class="share1">
+									<%= tweet_button(:via => "hmdy", :url => "http://localhost:3000/pages/#{micropost.id}", :text => "#{@micropost.content}", :lang => "en", :related => "helpmedateyou",  :count => "none") %>
+								</div>
+							</td>
+						</tr>
+						<% end %>
+			
+					</tbody>
+				</div>	
+			</table>
+		
+			
+			<div class="digg_pagination">
+				<div id="paginkamari" align="center">
+				<%= will_paginate @microposts %> <br/>
+				</div>
+			</div>
+		
+		
+		<div id="empty"></div>
+	</div>	
 </div>
 
 

@@ -1,3 +1,2 @@
-
-$('#microposts').append('<%= j render(@miroposts)') %>);
-$('.paginkamari').replaceWith('<%= paginate @microposts %>')
+$('#microposts').append('<%= j render(@microposts) %>)');
+$('.pagination').replaceWith('<%= j will_paginate(@render) %>');
