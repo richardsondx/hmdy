@@ -17,29 +17,30 @@
 <div id="container">
 	<div id="separator"><p>What People Are Saying</p></div>
                     <div id="section">
-                        <!-- Girl Post-->
-						<% for micropost in @microposts %>
-                        <span class="article">
-                             <ul>
-	
-                             <li class="headshot"><%= image_tag("#{ micropost.to_guys ? "guys" : "girl" }-head.png") %></li>
-                             <li class="tipscontent"><p><%= link_to micropost.content, page_path(micropost) %></p></li>
-                             <li class="fbshare">
-	
-	<a href="https://twitter.com/share" class="twitter-share-button" data-via="twitterapi" data-lang="en" data-hashtags="hmdy">Tweet</a>					
-							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-							
-							</li>                           
-                             </ul>
-						</span>
-						<% end %>
-						<div id="paginkamari" align="center"><p><%= paginate @microposts %></p></div>
+						<table>
+							<thead>
+								<tr>
+					 	  	   	  <th><h2>Who?</h2><th>
+					 	  	   	  <th><h2>What they said?</h2><th>
+					 	  	   	  <th><h2></h2><th>
+								<tr>
+							<thead>
+							<tbody id="microposts">
+								<tr>
+								<% for micropost in @microposts %>
+								   <td class="tdeux"><div class="head1"><%= image_tag("#{ micropost.to_guys ? "guys" : "girl" }-head.png") %></div><td>
+								   <td valign="top"><p class="peopleposts"><%= link_to micropost.content, page_path(micropost) %></p><td>
+								   <td class="td2"><div class="share1"><%= tweet_button(:via => "hmdy", :url => "http://localhost:3000/pages/#{micropost.id}", :text => "#{@micropost.content}", :lang => "en", :related => "helpmedateyou", :class => "share2") %></div><td>
+								<tr>
+								<% end %>
+							<tbody>
+						</table>
+						<b><div id="paginkamari" align="center"><%= paginate @microposts %> <br/></div></b>
+						<div id="empty"></div>
                     </div>
-					<div id="footer">
-						<p>About Advertising Contact us</p>
-					</div>
+
 	
-        </div>
+</div>
 
 
 <!-- END of CONTAINER here-->

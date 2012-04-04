@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
   <title>Gigiki</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "application" %>	
   <%= csrf_meta_tags %>      
 </head>
 <body>
@@ -11,8 +11,8 @@
 	<script>
 	  window.fbAsyncInit = function() {
 	    FB.init({
-	      appId      : 'YOUR_APP_ID', // App ID
-	      channelUrl : '//localhost:3000/channel.html', // Channel File
+	      appId      : '109989265800865', // App ID
+	      channelUrl : '//furious-ice-4458.herokuapp.com/channel.html', // Channel File
 	      status     : true, // check login status
 	      cookie     : true, // enable cookies to allow the server to access the session
 	      xfbml      : true  // parse XFBML
@@ -30,10 +30,23 @@
 	     ref.parentNode.insertBefore(js, ref);
 	   }(document));
 	</script>
+	
+	 <script src="//connect.facebook.net/en_US/all.js"></script>	
+	
 	<div id="background">
 		<nav>
-			<a href="https://twitter.com/helpmedateyou" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @helpmedateyou</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			
+			<a href="https://twitter.com/richardsondx" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @richardsondx</a> <script>
+			$(document).ready(){
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+		});
+			</script>
 		</nav>
+			<!-- <div id="menubox">
+			<a href="#"class="menu"><b>About</b></a>
+			<a href="" class="menu"><b>Advertising</b></a>
+			<a href="#"class="menu"><b>Contact</b></a>
+			</div> -->
 
 		<div class="container">
   			<header>

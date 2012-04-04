@@ -1,24 +1,12 @@
+</br></br>
+<div><h1 align="center"><%= link_to("Go Back", '../pages#index' )%></h1></div>
 <div class="display">
-<p>
-  <% unless @micropost.to_guys == false %>
-  	<h1>Tips  #<%= @micropost.id %> for guys:</h1>
-  <% else %>
-	<h1>Tips  #<%= @micropost.id %> for girls:</h1>
-  <% end%>
-</p>
 <p>
   <div class="article">
 	<ol>
-	<div class="headshotpost">
-
-
-	<li class="headshot"><%= image_tag("#{ @micropost.to_guys ? "guys" : "girl" }-head.png") %></li>
-	</div>
-	<li><p><%= @micropost.content %></p></li>
-	 <li class="fbshare"><a href="https://twitter.com/share" class="twitter-share-button" data-text="<%=@micropost.content%>" data-hashtags="hmdy">Tweet</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
-	<li></li>
-	<li></li>
+	<li><%= image_tag("#{ @micropost.to_guys ? "guys" : "girl" }-head.png")%><li>
+	<p class="peopleposts"><%= @micropost.content %></p><br/></li>
+	<h2>Comments:</h2>
 	</ol>
   </div>
 </p>

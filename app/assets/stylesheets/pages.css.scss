@@ -37,7 +37,7 @@ body {
 }
 #background {
     background: url("background.png") repeat scroll 0 0 transparent;
-    height: 975px;
+    height: 950px;
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
@@ -85,8 +85,6 @@ div#header div#textfield {
     margin: 13px 10px;
 }
 #container {
-    background: url("content-background.png") repeat scroll 0 0 transparent;
-    height: 555px;
     position: relative;
     top: 300px;
 }
@@ -98,49 +96,25 @@ div#header div#textfield {
     text-indent: -9999px;
 }
 #section {
-    height: 479px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    width: 615px;
-}
-.article ul {
-}
-.article ul li {
-    
-  	display: inline-block;
-  	float: left;
-  	margin-top: 9px;
-  	height: 60px;
-}
-.article li p {
-    
-  	height: 50px;
-  	margin-left: 10px;
-  	margin-right: 20px;
-  	padding: 5px 10px;
-  	width: 400px;
-	background: white;
-}
-.article li.fbshare{
-   
-   height: 60px;
-}
-.article li .twitter-share-button {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 10px;
-  
+  width: 615px
 }
 
 div#paginkamari {
-  color: white;
+  color: #9F533F;
   position: relative;
   top: 20px;
+  font-size: 20px;
 }
 
 div#paginkamari a{
-    color: white;
+    color: #9F533F;
+}
+
+div#paginkamari a:hover {
+  color: white;
 }
 
 .toguys{
@@ -164,4 +138,60 @@ div.display{
    width: 440px;
    margin-left: auto;
    margin-right: auto;
+}
+
+
+ p.peopleposts  {
+  background: white;
+  color: black;
+  background: white;
+  color: black;
+  padding: 10px 14px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  text-align: center;
+  vertical-align: middle;
+  width: 400px;
+  
+}
+
+p.peopleposts a:link {
+    color: black;
+    text-decoration: none;
+}
+
+p.peopleposts a:visited{
+   color: black;
+}
+
+p.peopleposts a:hover {
+    color: red;
+}
+
+
+td { 
+     vertical-align: middle;
+     padding-right: 10px;
+    }
+
+th { 
+	  padding: 10px;
+	  }
+	
+	
+	
+.menu{
+	background: #9F533F;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+	padding-top: 5px;
+}
+
+a.menu {
+    color: white;
+    text-decoration: none;
+    padding: 4px;
 }
