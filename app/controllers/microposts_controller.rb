@@ -44,6 +44,8 @@ class MicropostsController < ApplicationController
 
   def update
     @micropost = Micropost.find(params[:id])
+    
+     @micropost.to_guys = params["commit"] == "to Guys"
 
     if params['commit'] == "to Guys"
        @micropost.update_attribute(:to_guys, true)
