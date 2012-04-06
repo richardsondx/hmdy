@@ -8,9 +8,13 @@
   <meta property="fb:app_id" content="109989265800865" />  
   <meta name="title" content="Guys and Girls tell you what they like" />
   <meta name="description" content="Share tips and advice anonymously with the right gender and talk about it." />
+
 </head>
 <body>
 	<div id="fb-root"></div>
+	<script>
+	FB.api('/me/feed', 'post', { caption: message, name: "HelpMeDateYou",  description: "It's a fun and easy ay to share tips and advice with the right gender and get to know what they want or like.", link : "http://www.helpmedateyou.com" }, function(response) {});
+	</script
 	<script>
 	  window.fbAsyncInit = function() {
 	    FB.init({
@@ -34,7 +38,8 @@
 	   }(document));
 	</script>
 	
-	 <script src="//connect.facebook.net/en_US/all.js"></script>	
+	 <script src="//connect.facebook.net/en_US/all.js"></script>
+	
 	
 	<div id="background">
 		<nav>
