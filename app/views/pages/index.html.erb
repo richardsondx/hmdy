@@ -38,7 +38,7 @@
 							</td>
 							<td class="td2">
 								<div class="share1">
-									<%= tweet_button(:via => "hmdateyou", :url => "http://www.helpmedateyou.com/pages/#{micropost.id}", :text => "#{micropost.content}", :count => "vertical") %>
+									<%= tweet_button(:via => "helpmedateyou", :url => "http://www.helpmedateyou.com/pages/#{micropost.id}", :text => "Tips from #{ micropost.to_guys ? "guys" : "girl" from}", :count => "vertical") %>
 									
 								</div>
 							</td>
