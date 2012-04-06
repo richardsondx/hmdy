@@ -4,7 +4,7 @@ class MicropostsController < ApplicationController
     
   def index
     @microposts = Micropost.all
-    @micropost = Micropost.new(:tag => '4')
+    @micropost = Micropost.new
   end
 
   def show
@@ -23,11 +23,11 @@ class MicropostsController < ApplicationController
     @micropost = Micropost.new(params[:micropost])
     
     @micropost.to_guys = params["commit"] == "to Guys"
-    #    @micropost.to_guys = true
-    #    flash[:notice] = "to Guys was clicked and the boolean is updated"
-    # else
-    #    @micropost.to_guys = false
-    # end
+      #  @micropost.to_guys = true
+      #    flash[:notice] = "to Guys was clicked and the boolean is updated"
+      # else
+      #    @micropost.to_guys = false
+      # end
 
     if @micropost.save
       redirect_to(:back)
@@ -45,7 +45,7 @@ class MicropostsController < ApplicationController
   def update
     @micropost = Micropost.find(params[:id])
     
-     @micropost.to_guys = params["commit"] == "to Guys"
+    
 
     if params['commit'] == "to Guys"
        @micropost.update_attribute(:to_guys, true)

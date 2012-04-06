@@ -4,8 +4,3 @@
 
 
 $('#inputtext').limit('140','#charsLeft');
-
-#jQuery ->
-#  $(window).scroll ->
-#    if $(window).scrollTop() > $(document).height() - $(window).height() - 50
-#      $.getScript($('.pagination .next_page').attr('href'))

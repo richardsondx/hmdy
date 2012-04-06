@@ -4,7 +4,7 @@
 
   <div class="article">
 	<ol>
-	<li><%= image_tag("#{ @micropost.to_guys ? "guys" : "girl" }-head.png")%><li>
+	<li><%= image_tag("#{ @micropost.to_guys ? "girl" : "guys" }-head.png")%> <h1><%= @micropost.to_guys ? "one girl is saying this" : "one guy is saying this" %></h1><li>
 	<p class="peopleposts"><%= @micropost.content %></p><br/></li>
 	<h2>Comments:</h2>
 	</ol>
