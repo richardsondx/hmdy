@@ -1,7 +1,7 @@
 </br></br>
 <div><h1 align="center"><%= link_to("Go Back", '../pages#index' )%></h1></div>
 <div class="display">
-<p>
+
   <div class="article">
 	<ol>
 	<li><%= image_tag("#{ @micropost.to_guys ? "guys" : "girl" }-head.png")%><li>
@@ -9,8 +9,8 @@
 	<h2>Comments:</h2>
 	</ol>
   </div>
-</p>
-<p>
+
+
 
 <div class="fb-comments" data-href="http:/www.helpmedateyou.com/pages/<%= @micropost.id %>" data-num-posts="5" data-width="470"></div>
 
