@@ -1,4 +1,6 @@
 <meta property="og:url" content="http://www.helpmedateyou.com/<%= @micropost.id %>" />
+<meta property="og:description" content="<%= @micropost.to_guys ? "one girl is saying: " : "one guy is saying: " %><%= @micropost.content %>" />
+
 </br></br>
 <div><h1 align="center"><%= link_to("Go Back", '../pages#index' )%></h1></div>
 <div class="display">
