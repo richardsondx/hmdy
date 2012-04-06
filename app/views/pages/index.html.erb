@@ -31,7 +31,7 @@
 						<% for micropost in @microposts %>
 						<tr>
 							<td class="tdeux">
-								<div class="head1"><%= image_tag("#{ micropost.to_guys ? "girl" : "guys" }-head.png") %></div>
+								<div class="head1"><%= image_tag("#{ micropost.to_guys ? "guys" : "girl" }-head.png") %></div>
 							</td>
 							<td valign="top">
 								<p class="peopleposts"><%= link_to micropost.content, page_path(micropost) %></p>
