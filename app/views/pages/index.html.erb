@@ -38,7 +38,8 @@
 							</td>
 							<td class="td2">
 								<div class="share1">
-									<%= tweet_button(:via => "hmdy", :url => "http://localhost:3000/pages/#{micropost.id}", :text => "#{@micropost.content}", :count => "none") %>
+									
+									<%= custom_tweet_button('Tweet it!', {:via => "hmdy"}, {:class => "tweet-sharey-thing"})%>
 								</div>
 							</td>
 						</tr>
