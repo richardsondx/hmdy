@@ -1,6 +1,6 @@
 class MicropostsController < ApplicationController
    # html basic authentification system for the admin session
-    #before_filter :authenticate , :except => [ :create, :new, :delete, :show]
+    before_filter :authenticate , :except => [ :create, :new, :show]
     
   def index
     @microposts = Micropost.all
