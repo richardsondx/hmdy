@@ -11,8 +11,10 @@ gem 'rails', '3.2.1'
 gem "tweet-button"
 # gem 'kaminari'
 gem 'will_paginate'
-gem 'contact_us', '~> 0.2.0'
 gem "formtastic", "~> 2.2.0"
+gem "sass", :require => 'sass'                                                                                                                               
+
+
 gem "nifty-generators", :group => :development
 
 # Gems used only for assets and not required
