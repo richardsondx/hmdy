@@ -15,4 +15,9 @@ class PagesController < ApplicationController
     
    # @microposts = Micropost.order("created_at").page(params[:page]).per(6)
   end
+  
+  def flagthis
+    micropost.flag += 1
+    redirect_to(:back)
+  end
 end
