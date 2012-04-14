@@ -5,14 +5,13 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-  gem 'pg'
+ gem 'pg'
 # gem 'sqlite3'
 
 gem "tweet-button"
 # gem 'kaminari'
 gem 'will_paginate'
-gem "formtastic", "~> 2.2.0"
-gem "sass", :require => 'sass'                                                                                                                               
+
 
 
 gem "nifty-generators", :group => :development
