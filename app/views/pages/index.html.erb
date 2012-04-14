@@ -1,65 +1,35 @@
 <meta name="description" content="Share tips and advice anonymously with the right gender and talk about it." />
 <meta property="og:url" content="http://www.helpmedateyou.com" />
-<div id="header" align="center">
-	<div id="box">
-		<div id="boxheader">
-		   <%= image_tag('logo.png', :id => 'mainlogo' )%>
-           <%= image_tag('sharetips.png', :id => 'title' )%>
-        </div>
-	</div>
-		<% @micropost = Micropost.new %>
-		<%= render  :partial => 'microposts/form2', :locals => { :micropost => @micropost } %>
-		<%= debug(params) if Rails.env.development? %>
-	 
-	<div id="who_needs_to_know"><%= image_tag("who_need_to_know.png")%></div>
 
-</div>
+<div id="central_bar"></div>
 
-<!-- BEGINNING of CONTAINER here-->
-<div id="container">
-	<div id="separator"><p>What People Are Saying</p></div>
-		<div id="section">
-			<table>
-				<thead>
-					<tr>
-				   	  <th><h2>Speakers</h2></th>
-				   	  <th><h2>What they said?</h2></th>
-				   	  <th><h2></h2></th>
-					<tr/>
-				</thead>
-				<div id="microposts">
-					<tbody>
-						
-						<% for micropost in @microposts %>
-						<tr>
-							<td class="tdeux">
-								<div class="head1"><%= image_tag("#{ micropost.to_guys ? "girl" : "guys" }-head.png") %></div>
-							</td>
-							<td valign="top">
-								<p class="peopleposts"><%= link_to micropost.content, page_path(micropost) %></p>
-							</td>
-							<td class="td2">
-								<div class="share1">
-									<%= tweet_button(:via => "helpmedateyou", :url => "http://www.helpmedateyou.com/pages/#{micropost.id}", :text => "Tips from #{ micropost.to_guys ? "guys" : "girl"} from", :count => "none") %>
-									
-								</div>
-							</td>
-						</tr>
-						<% end %>
-			
-					</tbody>
-				</div>	
-			</table>
+<div id="container_bg">
+	<div id="container">
+		<div id="container_top">
+
+			<% @micropost = Micropost.new %>
+			<%= render  :partial => 'microposts/form2', :locals => { :micropost => @micropost } %>
+			<!-- <%= debug(params) if Rails.env.development? %> -->
+
+		</div>
+		<div id="container_main">
+			<div id="articles">
 		
-			
-			<div class="digg_pagination">
-				<div id="paginkamari" align="center">
-				<%= will_paginate @microposts %> <br/>
+				<div class="article">
+					<ol>
+						<div id="microjax">
+						<%= render 'microposts' %>
+						</div>
+					</ol>
 				</div>
 			</div>
-		
-		
-		<div id="empty"></div>
+
+        
+			<div id="articles-footer">
+				<%= render 'pagination'%>
+			</div>
+			
+		</div>
 	</div>	
 </div>
 

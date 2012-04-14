@@ -1,2 +1,2 @@
-$('#microposts').append('<%= j render(@microposts) %>)');
-$('.pagination').replaceWith('<%= j will_paginate(@render) %>');
+$("#microjax").html("<%= escape_javascript(render("microposts")) %>" );
+$(".digg_pagination").html("<%= escape_javascript(render("pagination")) %>");

@@ -2,20 +2,24 @@
 <meta property="og:description" content="<%= @micropost.to_guys ? "one girl is saying: " : "one guy is saying: " %><%= @micropost.content %>" />
   <meta name="description" content="<%= @micropost.to_guys ? "one girl is saying: " : "one guy is saying: " %><%= @micropost.content %>" />
 
-</br></br>
-<div><h1 align="center"><%= link_to("Go Back", '../pages#index' )%></h1></div>
-<div class="display">
+<div id="central_bar">
+	<p><%= link_to "Go Back", root_path %></p>
+</div>
 
-  <div class="article">
-	<ol>
-	<li><%= image_tag("#{ @micropost.to_guys ? "girl" : "guys" }-head.png")%> <h1><%= @micropost.to_guys ? "one girl is saying this" : "one guy is saying this" %></h1><li>
-	<p class="peopleposts"><%= @micropost.content %></p><br/></li>
-	<h2>Comments:</h2>
-	</ol>
-  </div>
-
-
-
-	<div class="fb-comments" data-href='http://www.helpmedateyou.com/pages/<%= @micropost.id %>' data-num-posts="5" data-width="470"></div>
-
+<div id="container_bg">
+	<div id="container2">
+		<div id="container_top">
+			<div class="article2">
+				<ol>
+					<li>
+						<%= image_tag("#{@micropost.to_guys ? "girls" : "guys"}-bubble.png") %>
+						<p><%= @micropost.content %></p>
+					<li>
+				</ol>
+			</div>
+		</div>
+		<div id="container_main2" align="center">
+				<div class="fb-comments" data-href='http://www.helpmedateyou.com/pages/<%= @micropost.id %>' data-num-posts="5" data-width="470"></div>
+		</div>
+	</div>
 </div>

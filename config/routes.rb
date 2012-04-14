@@ -12,6 +12,9 @@ Gigiki::Application.routes.draw do
  match "pages" => "pages#index"
  match "tips" => "pages#tips"
  match "facebook" => "pages#facebook"
+ match "advertise" => "pages#advertise"
+ match "contact" => "pages#contact"
+ match "terms" => "pages#terms"
  #set the liaision between the two pages and crate the path 'page_path'
  match "pages/:id" => "microposts#display" , :as => :page
 
@@ -20,9 +23,9 @@ Gigiki::Application.routes.draw do
   get "microposts/new"
   get "microposts/show"
   get "microposts/display"
-  get "pages/_board"
-  get "pages/_forum"
   get "pages/contact"
+  get "pages/advertise"
+  get "pages/terms"
   
 
 

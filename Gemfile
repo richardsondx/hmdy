@@ -5,12 +5,15 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
- gem 'pg'
+  gem 'pg'
 # gem 'sqlite3'
 
 gem "tweet-button"
 # gem 'kaminari'
 gem 'will_paginate'
+gem 'contact_us', '~> 0.2.0'
+gem "formtastic", "~> 2.2.0"
+gem "nifty-generators", :group => :development
 
 # Gems used only for assets and not required
 # in production environments by default.

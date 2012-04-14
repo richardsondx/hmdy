@@ -1,16 +1,15 @@
-<div id="textfield">
-		<%= form_for @micropost do |f| %>
-    	<%= f.text_field :content, :size => 90 , :class => "inputtext", :placeholder => "What's worth sharing?"%> <br/>
-
+<div id="central_bar_top">
+	<%= form_for @micropost do |f| %>
+	<%= f.text_field :content, :size => 140 , :class => "inputtext", :placeholder => "What's worth sharing?"%> 
+	<span id="charsLeft"></span>
+	<script>
+	$('.inputtext').limit('140','#charsLeft');
+	</script>
 </div>
-<span>You have <span id="charsLeft"></span> chars left.</span>
-<script>
-
-$('.inputtext').limit('140','#charsLeft');
-
-</script>
-<div id="buttons">
-	<%= f.submit "to Guys", :class => "toguys" %>
-    <%= f.submit "to Girls", :class => "togirls"%>
-</div>
+<div id="central_bar_bottom">
+	<%= f.submit "To Guys", :class => "toguys", :type => "images"%>
+	<%= f.submit "To Girls", :class => "togirls", :type => "images"%>
 	<% end %>
+</div>
+	
+ 

@@ -6,7 +6,8 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
   <title>Help Me Date You | Learn from guys and girls tips or advice</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>	
+  <%= javascript_include_tag "application" %>
+<%= javascript_include_tag "jquery" %>		
   <%= csrf_meta_tags %>    
   <link rel="image_src" href="http://i.imgur.com/lhzsc.jpg" / >
   <meta property="fb:app_id" content="109989265800865" />  
@@ -19,59 +20,59 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
 <meta property="og:image" content="http://i.imgur.com/lhzsc.jpg" />
 <meta property="og:site_name" content="HelpMeDateYou.com | Share tips and Advice with guys and girls" />
 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '109989265800865', // App ID
+      channelUrl : '//furious-ice-4458.herokuapp.com/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional initialization code here
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+</script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
 </head>
 <body>
-	<div id="fb-root"></div>
-	<script>
-	  window.fbAsyncInit = function() {
-	    FB.init({
-	      appId      : '109989265800865', // App ID
-	      channelUrl : '//furious-ice-4458.herokuapp.com/channel.html', // Channel File
-	      status     : true, // check login status
-	      cookie     : true, // enable cookies to allow the server to access the session
-	      xfbml      : true  // parse XFBML
-	    });
-
-	    // Additional initialization code here
-	  };
-
-	  // Load the SDK Asynchronously
-	  (function(d){
-	     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-	     if (d.getElementById(id)) {return;}
-	     js = d.createElement('script'); js.id = id; js.async = true;
-	     js.src = "//connect.facebook.net/en_US/all.js";
-	     ref.parentNode.insertBefore(js, ref);
-	   }(document));
-	</script>
+	<div id="footer">
+   		<%= link_to image_tag("logo-Small.png", :class => "footer_content flogo",:mouseover => "logo-Small-Rollover-copy.png" ), root_path%>
+   		<div id="vbar"></div>
+   		<%= link_to image_tag("fb-contactus.png", :class => "footer_menu fbcontact", :mouseover => "fb-contactus-rollover.png"), contact_path%></a>
+   		<%= link_to image_tag("fb-advertise.png", :class => "footer_menu fbadvertise", :mouseover => "fb-advertise-rollover.png"), advertise_path %>
+   		<%= link_to image_tag("fb-terms.png", :class => "footer_menu fbterm", :mouseover => "fb-term-rollover.png"), terms_path%></a>
+   		<div id="credit">
+   		<%= link_to image_tag("builtwith.png", :class => "footer_credit fcredit", :mouseover => "builtwith-rollover.png" ), "http://sixno.de"%></a>
+   		</div>
+	<div id="nav">
+		<a href="https://twitter.com/helpmedateyou" class="twitter-follow-button" data-show-count="false" data-lang="en">
+			<%= image_tag("follow.png", :class => "follow")%>
+		</a>
+		<script>
+		$(document).ready(){
+		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+	});
+		</script>
+	</div>
+	<div id="top">
+		<!-- <%= image_tag("city-bg.png")%> -->
+		<div id="top_bg" align="center">
+			<%= link_to image_tag('logo.png'), root_path %>
+		</div>
+	</div>
 	
-	 <script src="//connect.facebook.net/en_US/all.js"></script>
-	
-	
-	<div id="background">
-		<nav>
-			
-			<a href="https://twitter.com/helpmedateyou" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @helpmedateyou</a> <script>
-			$(document).ready(){
-			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-		});
-			</script>
-		</nav>
-			<!-- <div id="menubox">
-			<a href="#"class="menu"><b>About</b></a>
-			<a href="" class="menu"><b>Advertising</b></a>
-			<a href="#"class="menu"><b>Contact</b></a>
-			</div> -->
-
-		<div class="container">
-  			<header>
-  			</header>
-
 			<%= yield %>
 
-		</div>
-
-
-	</div>
+   </div>
 </body>
 </html>

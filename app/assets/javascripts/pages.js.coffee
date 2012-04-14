@@ -3,4 +3,4 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 
-$('#inputtext').limit('140','#charsLeft');
+$('.inputtext').limit('140','#charsLeft');

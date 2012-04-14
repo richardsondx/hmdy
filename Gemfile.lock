@@ -36,10 +36,15 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.2.0)
+    coffee-script-source (1.3.1)
+    contact_us (0.2.0)
+      formtastic (>= 2.1.0)
+      rails (>= 3.0.0)
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
+    formtastic (2.2.0)
+      actionpack (>= 3.0)
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.3)
@@ -53,6 +58,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.18)
     multi_json (1.2.0)
+    nifty-generators (0.4.6)
     pg (0.13.2)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -95,7 +101,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tweet-button (0.1.0)
-    tzinfo (0.3.32)
+    tzinfo (0.3.33)
     uglifier (1.2.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
@@ -106,7 +112,10 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  contact_us (~> 0.2.0)
+  formtastic (~> 2.2.0)
   jquery-rails
+  nifty-generators
   pg
   rails (= 3.2.1)
   sass-rails (~> 3.2.3)

@@ -1,197 +1,482 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
-    background: none repeat scroll 0 0 transparent;
-    border: 0 none;
-    font-size: 100%;
-    margin: 0;
-    outline: 0 none;
-    padding: 0;
-    vertical-align: baseline;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
 }
+
 body {
-    line-height: 1;
+	line-height: 1;
 }
+
 ol, ul {
-    list-style: none outside none;
+	list-style: none;
 }
+
 blockquote, q {
-    quotes: none;
+	quotes: none;
 }
-blockquote:before, blockquote:after, q:before, q:after {
-    content: none;
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
 }
+
+/* remember to define focus styles! */
 :focus {
-    outline: 0 none;
+	outline: 0;
 }
+
+
+/* remember to highlight inserts somehow! */
 ins {
-    text-decoration: none;
+	text-decoration: none;
 }
+
 del {
-    text-decoration: line-through;
+	text-decoration: line-through;
 }
+
+/* tables still need 'cellspacing="0"' in the markup */
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-body {
-    background: none repeat scroll 0 0 white;
-}
-#background {
-    background: url("background.png") repeat scroll 0 0 transparent;
-    height: 1200px;
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 960px;
-}
-nav .twitter-follow-button {
-   	float: right;
-	position: relative;
-    right: 30px;
-}
-div#header {
-    height: 170px;
-    position: relative;
-    top: 51px;
-}
-div#header #title {
-    position: relative;
-    top: 10px;
-}
-div#header div#box {
-    width: 580px;
-}
-div#boxheader {
-    height: 138px;
-    position: relative;
-    width: 480px;
-}
-div#header div#textfield {
-    background-image: url("boxybackground.png");
-    height: 66px;
-    margin-top: 30px;
-    overflow: hidden;
-    padding-top: 18px;
-    position: relative;
-    width: 960px;
-}
-.inputtext {
-    background: none repeat scroll 0 0 transparent;
-    border: medium none;
-    font: 30px Tahoma,Helvetica,Arial,Sans-Serif;
-    height: 50px;
-    width: 470px;
-}
-#buttons img {
-    margin: 13px 10px;
-}
-#container {
-    position: relative;
-    top: 300px;
-}
-#separator {
-    background-image: url("whatpeoplesay.png");
-    color: white;
-    height: 33px;
-    margin-bottom: 10px;
-    text-indent: -9999px;
-}
-#section {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  width: 615px
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-div#paginkamari {
-  color: #9F533F;
+
+/* THIS IS WHERE THE STYLE OF THIS WEBSITE START */
+
+body{
+    background: url('bg.png');
+}
+
+div#nav{
+    background: url('nav-bg3.png');
+    padding-right: 50px;
+    height: 22px;
+	float: right;
+}
+
+div#nav .follow{
+    float: right;
+}
+
+
+div#top{
+    
+    width: 960px;
+    height: 130px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+div#top {
+  background: url('cityislande-bg.png');
+  width: 960px;
+  height: 130px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+div#top_bg img{
   position: relative;
-  top: 20px;
-  font-size: 20px;
+  bottom: 27px;
 }
 
-div#paginkamari a{
-    color: #9F533F;
+div#central_bar{
+    background: url('central-bar-bg.png');
+    height: 148px;
+}
+div#container_bg{
+    background: url('bg-container-bg-6.png');
+	height: 584px;
+    margin: 0 auto;
+    width: 960px;
+}
+div#container_bg div#central_bar_top{
+    padding-top: 21px;
+    padding-left: 65px;
 }
 
-div#paginkamari a:hover {
-  color: white;
+div#container_bg div#central_bar_top .inputtext{
+    border: none;
+    height: 54px;
+    width: 565px;
+    background: none;
+    font-family: font-face;
+    font-size: 28.45px;
+}
+
+.inputtext:placeholder {
+    color: #d1b5a7;
+    text-align: center;
+}
+
+.inputtext:-moz-placeholder {
+    color: #d1b5a7;
+    text-align: center;
+}
+
+.inputtext:-webkit-input-placeholder {
+    color: #d1b5a7;
+    text-align: center;
+}
+
+
+div#container_bg div#central_bar_bottom{
+	margin-top: 10px;
+	padding-left: 117px;
+}
+
+div#container{
+    background: url('container-block.png');
+    width: 689px;
+    height: 744.5px; 
+    margin: 0 auto;
+    bottom: 173.5px;
+    position: relative;
+    overflow: visible;
+}
+
+div#container_top{
+    height:171px; 
+    width: 689px;
+}
+
+div#container_main{
+    background: url('bg.png');
+    width: 625px;
+    margin: 0 auto;
+    height: 587px;
+    position: relative;
+    left: 2.4px;
+}
+
+div#container_main #articles{
+	position: relative;
+    width: 585px;
+    margin: 0 auto;
+    height: 533px;
+}
+
+div#container_main #articles .article{
+    padding-top: 0px;
+}
+
+
+div#container_main #articles .article .content{
+	display: inline-block;
+	position: relative;
+	left: 102px;
+	width: 434px;
+	margin-bottom: 0px;
+	bottom: 79px;
+	height: 18px;
+}
+
+.content p{
+	font-family: 'AmbleBold';
+}
+
+div#container_main #articles .article .content a{
+	text-decoration: none;
+	color: black;
+	font-family: 'AmbleBold';
+}
+
+div#container_main #articles .article .content a:hover{
+	color: #e83f3f;
+}
+
+.content_a{
+    position: static;
+    width: 434px;
+}
+
+div#container_main #articles li{
+    padding-bottom: 0px;
+}
+
+div#container_main #articles .article .content .twshare{
+	padding-left: 2px;
+	padding-top: 3px;
+	position: absolute;
+	display: inline-block;
+	right: -10px;
+	top: 76px;
+	left:350px;
+	float: right;
+}
+
+div#container_main #articles .article .content .twshare .flagbt{
+	padding-left: 10px;
+	display: inline-block;
+}
+
+div#container_main #articles-footer{
+	position:relative;
+	width: 555px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+div#container_main #articles-footer p{
+    float: left;
+    background: red;
+    padding-top: 14px;
+}
+
+
+div#footer{
+    background: url('footer-bg.png');
+    width: 960px;
+    height: 39px;
+    margin: 0 auto;
+}
+
+div#footer .footer_content{
+    padding-left: 15px;
+    padding-bottom: 7px;
+
+}
+
+div#footer #vbar{    
+    display: inline-block;
+    width: 3px;
+    margin-left: 6px;
+    margin-top: 1px;
+    height: 38px;
+    background: url('footer-vbar.png');
+}
+
+div#footer .footer_menu{
+    margin-left: 6px;
+    padding-bottom: 15px;  
+}
+div#footer #credit{
+    display: inline-block;
+    width: 690px;
+}
+div#footer .footer_credit{
+    float: right;
+    padding-bottom: 9px;
 }
 
 .toguys{
- background: url('guys_button.png');
- width: 122px;
- height: 38px ;
- border: none;
- text-indent: 9999px;
+	background: url("Guys-togirls.png") no-repeat;
+	margin-right:60px;
+	width: 190px;
+	height: 37px;
+	border: none;
+	text-indent: -9999px;
+}
+
+.toguys:hover, .toguys:focus{
+	background: url('guyspressed.png') no-repeat;
 }
 
 .togirls{
- background: url('girls_button.png');
- width: 122px;
- height: 38px ;
- border: none;
- text-indent: 9999px;
+	background: url("Girls-to-guys.png") no-repeat;
+	width: 190px;
+	height: 37px;
+	border: none;
+	text-indent: -9999px;
+}
+
+.togirls:hover, .togirls:focus{
+	  background: url("girlspressed.png") no-repeat;
 }
 
 
-div.display{
-   width: 440px;
-   margin-left: auto;
-   margin-right: auto;
-}
-
-
- p.peopleposts  {
-  background: white;
-  color: black;
-  background: white;
-  color: black;
-  padding: 10px 14px;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  border-radius: 12px;
-  text-align: center;
-  vertical-align: middle;
-  width: 400px;
-  
-}
-
-p.peopleposts a:link {
-    color: black;
-    text-decoration: none;
-}
-
-p.peopleposts a:visited{
-   color: black;
-}
-
-p.peopleposts a:hover {
-    color: red;
-}
-
-
-td { 
-     vertical-align: middle;
-     padding-right: 10px;
-    }
-
-th { 
-	  padding: 10px;
-	  }
-	
-	
-	
-.menu{
-	background: #9F533F;
-	padding-left: 5px;
-	padding-right: 5px;
-	margin-right: 5px;
-	margin-left: 5px;
-	padding-top: 5px;
-}
-
-a.menu {
+#charsLeft{
+    margin-left: 10px;
     color: white;
-    text-decoration: none;
-    padding: 4px;
 }
+
+
+.digg_pagination {
+  margin-top:10px;
+  float:right;
+  background: #e1d0bb;
+  cursor: default;
+  /* self-clearing method: */ }
+  .digg_pagination a, .digg_pagination span, .digg_pagination em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px; }
+  .digg_pagination .disabled {
+    color: #999999;
+    border: 1px solid #dddddd; }
+  .digg_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #e72747;
+    color: white;
+    border: 1px solid #f9eee2 }
+  .digg_pagination a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid #f9eee2; }
+    .digg_pagination a:hover, .digg_pagination a:focus {
+      color: #000033;
+      border-color: #000033; }
+  .digg_pagination .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center; }
+    .digg_pagination .page_info b {
+      color: #000033;
+      background: #6aa6ed;
+      padding: 0.1em 0.25em; }
+  .digg_pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .digg_pagination {
+    height: 1%; }
+  *:first-child + html .digg_pagination {
+    overflow: hidden; }
+
+	#container2{
+	  background: url("container-block-post.png");
+	  width: 689px;
+	  height: 744.5px;
+	  margin: 0 auto;
+	  bottom: 173.5px;
+	  position: relative;
+	}
+
+	.article2{
+	    width: 555px;
+	    margin: 0 auto;
+	    padding-top: 22px;
+	}
+
+	.article2 p{
+	    width: 440px;
+	    height: 60px;
+	    top: 40px;
+	    right: 79px;
+	    position: absolute;
+	}
+	
+	#container_main2{
+	    height:560px;
+	    width: 600px;
+	    margin: 0 auto;
+	    overflow: scroll;
+	}
+	
+	#central_bar p{
+	    background: white;
+	    padding-top: 12px;
+	    padding-bottom: 10px;
+	    padding-left: 15px;
+	    padding-right: 15px;
+	    margin-left: 30px;
+	    margin-top:49px;
+	    float: left;
+	    border-radius: 3px;
+	    -moz-border-radius: 3px;
+	    -webkit-border-radius: 3px;
+		background: #484540;
+		color: white;
+	}
+	
+	#central_bar a{
+		background:  #484540;
+		color: white;
+		text-decoration: none;
+	}
+	#central_bar a:hover{
+		background: white;
+		color: black;	
+	}
+	
+	#central_bar p:hover{
+		background: white;
+		color: black;
+	}
+	
+/* SETUP FOR THE STATIC PAGES */
+
+#central_bar_thin{
+	background: url("central-bar-thin.png");
+	height: 64px;
+}
+
+#container3 {
+  background: url("container-block-static.png");
+  width: 689px;
+  height: 662.5px;
+  margin: 0 auto;
+  bottom: 93.2px;
+  position: relative;
+  padding-top: 15px;
+}
+
+#container_top2{
+    height: 80.4px;
+}
+.article3{
+    padding-top: 9px;
+}
+
+.article3 h1{
+    color: white;
+    font-size: 20px;
+    padding-left: 40px;
+}
+
+#container_main3 p{
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 590px;
+	
+}
+
+#container_main3{
+    margin: 0 auto;
+    width: 590px;
+}
+
+
+@font-face {
+    font-family: 'AmbleBold';
+    src: url('Amble-Bold-webfont.eot');
+    src: url('Amble-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Amble-Bold-webfont.woff') format('woff'),
+         url('Amble-Bold-webfont.ttf') format('truetype'),
+         url('Amble-Bold-webfont.svg#AmbleBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BreeSerifRegular';
+    src: url('BreeSerif-Regular-webfont.eot');
+    src: url('BreeSerif-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('BreeSerif-Regular-webfont.woff') format('woff'),
+         url('BreeSerif-Regular-webfont.ttf') format('truetype'),
+         url('BreeSerif-Regular-webfont.svg#BreeSerifRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
