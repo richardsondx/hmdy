@@ -1,10 +1,10 @@
 <% for micropost in @microposts %>
 	<li>			
-			<%= link_to image_tag("#{micropost.to_guys ? "girls" : "guys"}-bubble.png") , page_path(micropost), :mouseover => "comment-on-#{ micropost.to_guys ? "girl" : "guys" }.png"  %>
+			<%= link_to image_tag("#{micropost.to_guys ? "guys" : "girls"}-bubble.png") , page_path(micropost), :mouseover => "comment-on-#{ micropost.to_guys ? "girl" : "guys" }.png"  %>
 			<span class="content">
 				
 				<span class="content_a"><p><%= link_to micropost.content, page_path(micropost), :mouseover => "comment-on-girls.png" %></p></span>
-				<span class="twshare"><%= tweet_button(:via => "helpmedateyou", :url => "http://www.helpmedateyou.com/pages/#{micropost.id}", :text => "Tips from #{ micropost.to_guys ? "guys" : "girl"} from", :count => "none")%><%= link_to image_tag("flag.png", :class => "flagbt", :mouseover => "flag-rollover.png"), "#"%></span>
+				<span class="twshare"><%= tweet_button(:via => "helpmedateyou", :url => "http://www.helpmedateyou.com/pages/#{micropost.id}", :text => "Tips from #{ micropost.to_guys ? "guys" : "girls"} from", :count => "none")%><%= link_to image_tag("flag.png", :class => "flagbt", :mouseover => "flag-rollover.png"), "#"%></span>
 			</span>
 	</li>
 <% end %>
