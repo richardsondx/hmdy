@@ -22,13 +22,13 @@ class MicropostsController < ApplicationController
   def create
     @micropost = Micropost.new(params[:micropost])
     
-    @micropost.to_guys = params["commit"] == "to Guys"
-      #  @micropost.to_guys = true
-      #    flash[:notice] = "to Guys was clicked and the boolean is updated"
-      # else
-      #    @micropost.to_guys = false
-      # end
-
+    if @micropost.to_guys = params["commit"] == "to Girls"
+       @micropost.to_guys = true
+          flash[:notice] = "to Guys was clicked and the boolean is updated"
+       else
+          @micropost.to_guys = false
+       end
+ 
     if @micropost.save
       redirect_to(:back)
       flash[:notice] = "Thanks! You have successfully posted this Micropost."
