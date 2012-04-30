@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    recommends :micropost, dependent => :destroy
+    recommends :micropost
     
     def self.create_with_omniauth(auth)
       create! do |user|
