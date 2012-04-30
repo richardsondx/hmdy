@@ -5,12 +5,19 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
- gem 'pg'
-# gem 'sqlite3'
+
+ gem 'pg', :group => :production
+ gem 'sqlite3', :group => :development
+
 
 gem "tweet-button"
-# gem 'kaminari'
 gem 'will_paginate'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'oauth2'
+
+
+gem "recommendable", :git => "git://github.com/davidcelis/recommendable"
 
 
 
@@ -23,7 +30,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
+   gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
 end

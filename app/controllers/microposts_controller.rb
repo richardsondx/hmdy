@@ -1,9 +1,13 @@
 class MicropostsController < ApplicationController
    # html basic authentification system for the admin session
-    before_filter :authenticate , :except => [ :create, :new, :display]
+    # before_filter :authenticate , :except => [ :create, :new, :display]
     
   def index
-    @microposts = Micropost.all
+    # last = params[:last].blank? ? Time.now + 1.second : 
+    #    Time.parse(params[:last])
+    #    @microposts = Micropost.feed(last)
+    @microposts = Micropost.order("name").page(params[:page]).per_page(1)
+    
     @micropost = Micropost.new
   end
 
@@ -66,6 +70,116 @@ class MicropostsController < ApplicationController
     @micropost.destroy
     redirect_to microposts_url, :notice => "Successfully destroyed Micropost."
   end
+  
+  
+  
+  def like
+    @micropost = Micropost.find params[:id]
+
+      if current_user.like @micropost
+        @liked = @micropost.liked_by.length 
+        redirect_to :back
+      else
+        redirect_to :back
+      end
+  end
+
+  # DELETE /beers/:id/like.json
+  # DELETE /beers/:id/like.xml
+  def unlike
+    @micropost = Micropost.find params[:id]
+
+      if current_user.unlike @micropost
+        
+        redirect_to :back
+      else
+        redirect_to :back
+      end
+    
+  end
+
+  # POST /beers/:id/dislike.json
+  # POST /beers/:id/dislike.xml
+  def dislike
+    @micropost = Micropost.find params[:id]
+
+      if current_user.dislike @micropost
+          redirect_to :back
+        else
+          redirect_to :back
+      end
+
+  end
+
+  # DELETE /beers/:id/dislike.json
+  # DELETE /beers/:id/dislike.xml
+  def undislike
+    @micropost = Micropost.find params[:id]
+
+
+      if current_user.undislike @micropost
+          redirect_to :back
+        else
+          redirect_to :back
+      end
+
+  end
+  
+    def ignore
+      @micropost = Micropost.find params[:id]
+
+
+        if current_user.ignore @micropost
+            redirect_to :back
+          else
+            redirect_to :back
+        end
+
+    end
+
+    # DELETE /beers/:id/ignore.json
+    # DELETE /beers/:id/ignore.xml
+    def unignore
+      @micropost = Micropost.find params[:id]
+
+
+        if current_user.unignore @micropost
+            redirect_to :back
+          else
+            redirect_to :back
+        end
+
+    end
+
+    # POST /beers/:id/stash.json
+    # POST /beers/:id/stash.xml
+    def stash
+      @micropost = Micropost.find params[:id]
+
+
+        if current_user.stash @micropost
+            redirect_to :back
+          else
+            redirect_to :back
+        end
+
+    end
+
+    # DELETE /beers/:id/stash.json
+    # DELETE /beers/:id/stash.xml
+    def unstash
+      @micropost = Micropost.find params[:id]
+
+
+        if current_user.unstash @micropost
+            redirect_to :back
+          else
+            redirect_to :back
+        end
+
+    end
+  
+  
   protected
 
   def authenticate

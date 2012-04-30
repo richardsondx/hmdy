@@ -1,4 +1,8 @@
 Gigiki::Application.routes.draw do
+  
+ match '/auth/:provider/callback', to: 'sessions#create'
+ match "/signout" => "sessions#destroy", :as => :signout
+
  #create the match between the :id and the micropost with the action display
  match "microposts/display/:id" => "microposts#display"
 
@@ -7,6 +11,30 @@ Gigiki::Application.routes.draw do
     get 'display'
   end
  end
+ 
+ resources :users, :only => [:show, :create] do
+   member do
+     get 'liked'
+     get 'disliked'
+     get 'ignored'
+     get 'stashed'
+     get 'similar'
+   end
+ end
+ 
+ resources :microposts, :only => :show do
+   member do
+     post 'like'
+     delete 'like'    => :unlike
+     post 'dislike'
+     delete 'dislike' => :undislike
+     post 'ignore'
+     delete 'ignore'  => :unignore
+     post 'stash'
+     delete 'stash'   => :unstash
+   end
+ end
+ 
  
  #get the pages index and tips
  match "pages" => "pages#index"
@@ -27,6 +55,8 @@ Gigiki::Application.routes.draw do
   get "pages/advertise"
   get "pages/terms"
   
+  
+
 
 
   # The priority is based upon order of creation:

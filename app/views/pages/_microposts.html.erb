@@ -1,12 +1,66 @@
 <% for micropost in @microposts %>
-	<li>			
-			<%= link_to image_tag("#{micropost.to_guys ? "girls" : "guys"}-bubble.png") , page_path(micropost), :mouseover => "comment-on-#{ micropost.to_guys ? "girl" : "guys" }.png"  %>
-			<span class="content">
+
+<li class="li_article">
+	<!-- <div class="share_article">
+		<p>[ Like ] - [ Tweet ]</p>
+	</div> -->
+	<div class="article_post">
+		<span id="post_wrapper">
+			<span class="bubble_logo">
 				
-				<span class="content_a"><p><%= link_to micropost.content, page_path(micropost), :mouseover => "comment-on-girls.png" %></p></span>
-				<span class="twshare"><%= tweet_button(:via => "helpmedateyou", :url => "http://www.helpmedateyou.com/pages/#{micropost.id}", :text => "Tips from #{ micropost.to_guys ? "girls" : "guys"} from", :count => "none")%><%= link_to image_tag("flag.png", :class => "flagbt", :mouseover => "flag-rollover.png"), "#"%></span>
+				<% @images_girls  = ["girl_1.png", "girl_2.png", "girl_3.png", "girl_4.png", "girl_5.png"] %>
+			    <% @images_guys  = ["guy_1.pn	g", "guy_2.png", "guy_3.png", "guy_4.png", "guy_5.png"] %>
+			    <% @random_no = rand(5) %>
+			    <% @random_guys_image = @images_guys[@random_no] %>
+			    <% @random_girls_image = @images_girls[@random_no] %>
+			
+				<%= image_tag("#{micropost.to_guys ? @random_girls_image : @random_guys_image}")%>
 			</span>
-	</li>
+			<span class="bubble_wrap">
+			<p><%= link_to micropost.content, page_path(micropost) %></p>
+			</span>
+			<span class="flag_wrapper">
+				<%= link_to image_tag("Flag.png"), "#" %>
+			</span>
+		</span>
+		
+		
+		<div class="article_buttonss">
+			<span class="votes_wrapper">
+				<p><% if current_user %>
+						<% if current_user.likes? micropost %>
+							<%= link_to image_tag("Vote-Up-rollover.png"), like_micropost_path(micropost), :method => :delete%>
+							<%= micropost.liked_by.length %>
+						<% else %>
+							<%= link_to image_tag("Vote-Up-Button.png"), like_micropost_path(micropost), :method => :post %>
+							<%= micropost.liked_by.length %>
+						<% end %>
+							
+						<% if current_user.dislikes? micropost %>
+							<%= link_to image_tag("Vote-Down-rollover.png"), dislike_micropost_path(micropost), :method => :delete %>
+							 <%= micropost.disliked_by.length %>
+						<% else %>
+							<%= link_to image_tag('Vote-Down-rollover.png'), dislike_micropost_path(micropost), :method => :post %>
+							<%= micropost.disliked_by.length %>
+						<% end %>
+					<% else %>
+						<%= link_to image_tag("Vote-Up-Button.png", :mouseover => "Vote-Up-rollover.png" ), "/auth/facebook" %>
+						<%= link_to image_tag("Vote-Down-Button.png", :mouseover => "Vote-Down-rollover.png"), "/auth/facebook"%>
+					<% end %></p>
+							
+			</span>
+			<span class="comment_wrapper">
+				<!-- TO DO: ADD JAVASCRIPT HERE TO EXPAND THE DIVe -->
+				<%= image_tag('Comment.png', :mouseover => "Comment-Over.png", :class => "show_hide#{micropost.id} micropost") %>
+			</span>
+		</div>
+
+	</div>
+	<div class="slidingDiv<%= micropost.id %> fbsizeshow">
+			<div id="container_main2" align="center">
+				<div class="fb-comments" data-href="http://www.helpmedateyou.com/pages/<%= micropost.id %>" data-num-posts="6" data-width="500"></div>
+			</div>
+	</div>  
+	
+</li>	
 <% end %>
-
-

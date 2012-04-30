@@ -1,15 +1,16 @@
-<div id="central_bar_top">
+<div class="textfield_wrapper">
 	<%= form_for @micropost do |f| %>
-	<%= f.text_field :content, :size => 140 , :class => "inputtext", :placeholder => "What's worth sharing?"%> 
-	<span id="charsLeft"></span>
-	<script>
-	$('.inputtext').limit('140','#charsLeft');
-	</script>
+		<%= f.text_field :content, :size => 140 , :class => "entry_text", :placeholder => "Share advice anonymously with the right gender"%> 
+		<p class="char_count_label">Characters: <strong class="char_count"><span id="charsLeft"></span></strong></p>
+		<script>
+		$('.entry_text').limit('140','#charsLeft');
+		</script>
 </div>
-<div id="central_bar_bottom">
-	<%= f.submit "to Girls", :class => "togirls"%>
-	<%= f.submit "to Guys", :class => "toguys" %>
-	<% end %>
-</div>
+
+<div class="buttons_wrappers">
+
+	<%= f.submit "to Girls", :class => "togirls btn_wrap"%>
+	<%= f.submit "to Guys", :class => "toguys btn_wrap" %>
 	
- 
+	<% end %>
+<div>

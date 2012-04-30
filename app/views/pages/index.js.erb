@@ -1,2 +1,14 @@
-$("#microjax").html("<%= escape_javascript(render("microposts")) %>" );
-$(".digg_pagination").html("<%= escape_javascript(render("pagination")) %>");
+$('#microposts').append('<%= j render('microposts') %>');
+var micropostIds = [<%= @microposts.map {|micropost| micropost.id }.join(',') %>];
+$.each(micropostIds, function (index, value) {
+    $(".slidingDiv" + value).hide();
+    $(".show_hide" + value).show().click(function () {
+        $(".slidingDiv" + value).slideToggle();
+    });
+});
+<% if @microposts.next_page %>
+$('.pagination').replaceWith('<%= j will_paginate(@microposts) %>');
+<% else %>
+$('.pagination').remove();
+<% end %>
+<% sleep 0.2 %>

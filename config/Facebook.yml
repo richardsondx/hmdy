@@ -1,0 +1,4 @@
+production:
+  app_id: '187370434717652'
+  secret_key: '8726a8623628d9497933189cbba3b577'
+  callback_url: https://furious-ice-4458.herokuapp.com/

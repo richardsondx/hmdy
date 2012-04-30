@@ -2,24 +2,87 @@
 <meta property="og:description" content="<%= @micropost.to_guys ? "one girl is saying: " : "one guy is saying: " %><%= @micropost.content %>" />
   <meta name="description" content="<%= @micropost.to_guys ? "one girl is saying: " : "one guy is saying: " %><%= @micropost.content %>" />
 
-<div id="central_bar">
-	<p><%= link_to "Go Back", root_path %></p>
-</div>
 
-<div id="container_bg">
-	<div id="container2">
-		<div id="container_top">
-			<div class="article2">
-				<ol>
-					<li>
-						<%= image_tag("#{@micropost.to_guys ? "girls" : "guys"}-bubble.png") %>
-						<p><%= @micropost.content %></p>
-					<li>
-				</ol>
+<div id="container">
+	<section id="header_content">
+		<!-- TOP BAR NAVIGATION-->
+		<nav class="navigation">
+			<nav class="menu_left">
+				<% if current_user %>
+					Welcome <%= current_user.name %>!
+					<%= link_to "Sign Out", signout_path %>
+				<% else %>
+					<%= link_to image_tag('sign-in.png', :class => "mylogo"), "/auth/facebook"%>
+				<% end %>
+			</nav>
+		</nav>
+		
+
+				<div class="fb-like sharelikelogo" data-href="http://www.helpmedateyou.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+			<div class="logo_wrapper">
+				<%= link_to image_tag('logo.png'), root_path %>	
 			</div>
-		</div>
-		<div id="container_main2" align="center">
-				<div class="fb-comments" data-href='http://www.helpmedateyou.com/pages/<%= @micropost.id %>' data-num-posts="5" data-width="470"></div>
-		</div>
-	</div>
+			
+			
+			<div id="central_bar">
+				<p><%= link_to "<=  Go Back and View More Posts", root_path %></p>
+			</div>
+
+			
+			<div class="article_post">
+				<span id="post_wrapper">
+					<span class="bubble_logo">
+
+						<% @images_girls  = ["girl_1.png", "girl_2.png", "girl_3.png", "girl_4.png", "girl_5.png"] %>
+					    <% @images_guys  = ["guy_1.pn	g", "guy_2.png", "guy_3.png", "guy_4.png", "guy_5.png"] %>
+					    <% @random_no = rand(5) %>
+					    <% @random_guys_image = @images_guys[@random_no] %>
+					    <% @random_girls_image = @images_girls[@random_no] %>
+
+						<%= image_tag("#{@micropost.to_guys ? @random_girls_image : @random_guys_image}")%>
+					</span>
+					<span class="bubble_wrap">
+					<p><%= link_to @micropost.content, page_path(@micropost) %></p>
+					</span>
+					<span class="flag_wrapper">
+						<%= link_to image_tag("Flag.png"), "#" %>
+					</span>
+				</span>
+
+
+				<div class="article_buttonss">
+					<span class="votes_wrapper">
+						<p><% if current_user %>
+								<% if current_user.likes? @micropost %>
+									<%= link_to image_tag("Vote-Up-rollover.png"), like_micropost_path(@micropost), :method => :delete%>
+									<%= @micropost.liked_by.length %>
+								<% else %>
+									<%= link_to image_tag("Vote-Up-Button.png"), like_micropost_path(@micropost), :method => :post %>
+									<%= @micropost.liked_by.length %>
+								<% end %>
+
+								<% if current_user.dislikes? @micropost %>
+									<%= link_to image_tag("Vote-Down-rollover.png"), dislike_micropost_path(@micropost), :method => :delete %>
+									 <%= @micropost.disliked_by.length %>
+								<% else %>
+									<%= link_to image_tag('Vote-Down-rollover.png'), dislike_micropost_path(@micropost), :method => :post %>
+									<%= @micropost.disliked_by.length %>
+								<% end %>
+							<% else %>
+								<%= link_to image_tag("Vote-Up-Button.png", :mouseover => "Vote-Up-rollover.png" ), "/auth/facebook" %>
+								<%= link_to image_tag("Vote-Down-Button.png", :mouseover => "Vote-Down-rollover.png"), "/auth/facebook"%>
+							<% end %></p>
+
+					</span>
+				</div>
+
+			</div>
+			</div>
+			
+
+		   <div id="container_main2" align="center">
+		   		<div class="fb-comments" data-href='http://www.helpmedateyou.com/pages/<%= @micropost.id %>' data-num-posts="5" data-width="470"></div>
+		   </div>
+
+	</section>
 </div>

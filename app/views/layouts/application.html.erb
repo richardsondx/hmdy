@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-xmlns:og="http://ogp.me/ns#"
-xmlns:fb="http://www.facebook.com/2008/fbml">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">	
 <head>
-  <title>Help Me Date You | Learn from guys and girls tips or advice</title>
+
+<title>Help Me Date You | Learn from guys and girls tips or advice</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag 'jquery'%>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>    
   <link rel="image_src" href="http://i.imgur.com/Mij1Q.png"/>
-  <meta property="fb:app_id" content="109989265800865" />  
+  <meta property="fb:app_id" content="187370434717652" />  
   <meta name="title" content="Guys and Girls tell you everything" />
 
 
@@ -18,30 +17,6 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
 <meta property="og:type" content="website" />
 <meta property="og:image" content="http://i.imgur.com/Mij1Q.png" />
 <meta property="og:site_name" content="HelpMeDateYou.com | Share avice anonymously with guys and girls" />
-
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '109989265800865', // App ID
-      channelUrl : '//furious-ice-4458.herokuapp.com/channel.html', // Channel File
-      status     : true, // check login status
-      cookie     : true, // enable cookies to allow the server to access the session
-      xfbml      : true  // parse XFBML
-    });
-
-    // Additional initialization code here
-  };
-
-  // Load the SDK Asynchronously
-  (function(d){
-     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement('script'); js.id = id; js.async = true;
-     js.src = "//connect.facebook.net/en_US/all.js";
-     ref.parentNode.insertBefore(js, ref);
-   }(document));
-</script>
-<script src="//connect.facebook.net/en_US/all.js"></script>
 </head>
 <body>
 	<div id="fb-root"></div>
@@ -49,38 +24,48 @@ xmlns:fb="http://www.facebook.com/2008/fbml">
 	  var js, fjs = d.getElementsByTagName(s)[0];
 	  if (d.getElementById(id)) return;
 	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=109989265800865";
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=187370434717652";
 	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>	
-	<div id="footer">
-   		<%= link_to image_tag("logo-Small.png", :class => "footer_content flogo",:mouseover => "logo-Small-Rollover-copy.png" ), root_path%>
-   		<div id="vbar"></div>
-   		<%= link_to image_tag("fb-contactus.png", :class => "footer_menu fbcontact", :mouseover => "fb-contactus-rollover.png"), contact_path%></a>
-   		<%= link_to image_tag("fb-advertise.png", :class => "footer_menu fbadvertise", :mouseover => "fb-advertise-rollover.png"), advertise_path %>
-   		<%= link_to image_tag("fb-terms.png", :class => "footer_menu fbterm", :mouseover => "fb-term-rollover.png"), terms_path%></a>
-   		<div id="credit">
-   		<%= link_to image_tag("builtwith.png", :class => "footer_credit fcredit", :mouseover => "builtwith-rollover.png" ), "http://sixno.de"%></a>
-   		</div>
-	<div id="nav">
-		<a href="https://twitter.com/helpmedateyou" class="twitter-follow-button" data-show-count="false" data-lang="en">
-			<%= image_tag("follow.png", :class => "follow")%>
-		</a>
-		<script>
-		$(document).ready(){
-		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-	});
-		</script>
-			<div class="fb-like" data-href="http://www.helpmedateyou.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>	
-	</div>
-	<div id="top">
-		<!-- <%= image_tag("city-bg.png")%> -->
-		<div id="top_bg" align="center">
-			<%= link_to image_tag('logo.png'), root_path %>
-		</div>
-	</div>
+	}(document, 'script', 'facebook-jssdk'));</script>
 	
-			<%= yield %>
+	<%= yield %>
 
-   </div>
+	<div id="footer">
+		<p>Built by <%= link_to( image_tag("SixNode.png", :class =>"footerlogo", :mouseover => 		"SixNode---Over.png"), "http://sixno.de" )%></p>
+	</div>
+
+	<script type="text/javascript">
+	  var uvOptions = {};
+	  (function() {
+	    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+	    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/m0xPxYv8Vh2EcQuU1oTl9g.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+	  })();
+	</script>
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '187370434717652', // App ID
+	      channelUrl : '//localhost:3000/channel.html', // Channel File
+	      status     : true, // check login status
+	      cookie     : true, // enable cookies to allow the server to access the session
+	      xfbml      : true  // parse XFBML
+	    });
+
+
+	    // Additional initialization code here
+	  };
+
+	  // Load the SDK Asynchronously
+	  (function(d){
+	     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement('script'); js.id = id; js.async = true;
+	     js.src = "//connect.facebook.net/en_US/all.js";
+	     ref.parentNode.insertBefore(js, ref);
+	   }(document));
+	</script>
+
+
 </body>
 </html>
