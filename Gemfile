@@ -18,8 +18,7 @@ gem 'oauth2'
 
 
 gem "recommendable", :git => "git://github.com/davidcelis/recommendable"
-
-
+gem 'redis'
 
 gem "nifty-generators", :group => :development
 
