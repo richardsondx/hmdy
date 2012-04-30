@@ -15,6 +15,7 @@ gem 'will_paginate'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'oauth2'
+gem 'redis'
 
 
 gem "recommendable", :git => "git://github.com/davidcelis/recommendable"
