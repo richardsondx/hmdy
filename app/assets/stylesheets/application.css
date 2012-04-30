@@ -278,13 +278,19 @@ span.votes_wrapper {
     padding-left: 112px;
     float: left;
     width: 50%;
+	vertical-align: center;
+	background: red;
 }
 
 span.votes_wrapper img{
-    padding-left: 10px;
-    padding-right: 10px;
-    vertical-align: middle;
+	padding-left: 10px;
+	padding-right: 7px;
+	vertical-align: middle;
     
+}
+
+span.votes_wrapper p{ 	
+	padding-top: 2px;
 }
 span.comment_wrapper {
     float: right;

@@ -129,20 +129,17 @@ class MicropostsController < ApplicationController
     def ignore
       @micropost = Micropost.find params[:id]
 
-
         if current_user.ignore @micropost
             redirect_to :back
           else
             redirect_to :back
         end
-
     end
 
     # DELETE /beers/:id/ignore.json
     # DELETE /beers/:id/ignore.xml
     def unignore
       @micropost = Micropost.find params[:id]
-
 
         if current_user.unignore @micropost
             redirect_to :back

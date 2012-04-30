@@ -1,6 +1,27 @@
 
 .time {
-    padding-left: 30px;
+    padding-left: 15px;
     color: grey;
     font-size: 12px;
 }
+
+
+span.votes_wrapper img{
+	padding-left: 10px;
+	padding-right: 7px;
+	vertical-align: middle;
+	margin: auto 0;
+}
+
+span.votes_wrapper p{
+	vertical-align: middle;
+	overflow: visible;
+}
+	
+	span.votes_wrapper {
+	    color: #ff8e42;
+	    padding-left: 112px;
+	    float: left;
+	    width: 50%;
+		vertical-align: center;
+	}

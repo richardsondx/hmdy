@@ -1,4 +1,4 @@
-$('#microposts').append('<%= j render('microposts') %>');
+$('#microposts')eposts') %>');
 var micropostIds = [<%= @microposts.map {|micropost| micropost.id }.join(',') %>];
 $.each(micropostIds, function (index, value) {
     $(".slidingDiv" + value).hide();
