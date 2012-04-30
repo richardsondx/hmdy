@@ -6,7 +6,7 @@ require "resque-loner"
 # a new instance based on a host/port or UNIX socket, or pass in an existing
 # Redis client instance.
 # redis://redistogo:23f1313d9c311dc967021e31295f3758@guppy.redistogo.com:9037
-Recommendable.redis = Redis.new(:password => "23f1313d9c311dc967021e31295f3758", :host => "guppy.redistogo.com", :port => 6379)
+Recommendable.redis = Redis.new(:password => "23f1313d9c311dc967021e31295f3758", :host => "guppy.redistogo.com", :port => 9037)
 # Recommendable.redis = Redis.new(:host => "www.helpmedateyou.com", :port => 6379)
 
 # Connect to Redis via a UNIX socket instead
