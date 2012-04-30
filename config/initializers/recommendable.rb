@@ -14,7 +14,7 @@ Recommendable.redis = Redis.new(:host => "www.helpmedateyou.com", :port => 6379)
 # Resque somewhere else, leave this commented out. Otherwise, let it use the
 # same Redis connection as Recommendable. If redis is running on localhost:6379,
 # you can leave this commented out.
- Resque.redis = Recommendable.redis
+# Resque.redis = Recommendable.redis
 
 # Tell Redis which database to use (usually between 0 and 15). The default of 0
 # is most likely okay unless you have another application using that database.
