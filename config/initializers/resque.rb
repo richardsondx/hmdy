@@ -1,3 +1,4 @@
-Dir[File.join(Rails.root, 'app', 'jobs', '*.rb')].each { |file| require file }
-config = YAML::load(File.open("#{Rails.root}/config/redis.yml"))[Rails.env]
-Resque.redis = Redis.new(:host => config['host'], :port => config['port'])
+ENV["REDISTOGO_URL"] ||= "redis://redistogo:23f1313d9c311dc967021e31295f3758@guppy.redistogo.com:9037/"
+
+uri = URI.parse(ENV["REDISTOGO_URL"])
+Resque.redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password, :thread_safe => true)
