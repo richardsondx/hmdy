@@ -5,7 +5,7 @@ require "resque-loner"
 # Recommendable requires a connection to a running redis-server. Either create
 # a new instance based on a host/port or UNIX socket, or pass in an existing
 # Redis client instance.
-Recommendable.redis = Redis.new(:host => "guppy.redistogo.com", :port => 6789, :username => "redistogo", :password "23f1313d9c311dc967021e31295f3758")
+Recommendable.redis = Redis.new(:host => "guppy.redistogo.com", :port => 6789, :username => "redistogo", :password => "23f1313d9c311dc967021e31295f3758")
 
 
 # Connect to Redis via a UNIX socket instead
