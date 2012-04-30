@@ -11,6 +11,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    SystemTimer (1.2.3)
     actionmailer (3.2.1)
       actionpack (= 3.2.1)
       mail (~> 2.4.0)
@@ -93,6 +94,7 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
+    rack-timeout (0.0.3)
     rails (3.2.1)
       actionmailer (= 3.2.1)
       actionpack (= 3.2.1)
@@ -155,6 +157,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  SystemTimer
   coffee-rails (~> 3.2.1)
   jquery-rails
   nifty-generators
@@ -162,6 +165,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   pg
+  rack-timeout
   rails (= 3.2.1)
   recommendable!
   redis

@@ -1,7 +1,7 @@
 class MicropostsController < ApplicationController
    # html basic authentification system for the admin session
-   # before_filter :authenticate , :except => [ :create, :new, :display,
-   #      :like, :unlike,:dislike, :undislike, :ignore, :unignore, :stach, :unstach]
+   before_filter :authenticate , :except => [ :create, :new, :display,
+     :like, :unlike,:dislike, :undislike, :ignore, :unignore, :stach, :unstach]
     
   def index
     # last = params[:last].blank? ? Time.now + 1.second : 
