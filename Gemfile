@@ -17,6 +17,9 @@ gem 'omniauth-facebook'
 gem 'oauth2'
 gem 'redis'
 
+gem "SystemTimer", :require => "system_timer", :platforms => :ruby_18
+gem "rack-timeout"
+
 
 gem "recommendable", :git => "git://github.com/davidcelis/recommendable"
 
