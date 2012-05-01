@@ -4,7 +4,7 @@ $.each(micropostIds, function (index, value) {
     $(".slidingDiv" + value).hide();
     $(".show_hide" + value).show().click(function () {
         $(".slidingDiv" + value).slideToggle();
-		FB.XFBML.parse(document.getElementsById("#container_main2"));
+		FB.XFBML.parse($(".slidingDiv" + value)[0]);
     });
 });
 <% if @microposts.next_page %>
