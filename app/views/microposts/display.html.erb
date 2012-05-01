@@ -65,7 +65,7 @@
 									<%= link_to image_tag("Vote-Down-rollover.png"), dislike_micropost_path(@micropost), :method => :delete %>
 									 <%= @micropost.disliked_by.length %>
 								<% else %>
-									<%= link_to image_tag('Vote-Down-rollover.png'), dislike_micropost_path(@micropost), :method => :post %>
+									<%= link_to image_tag('Vote-Down-Button.png'), dislike_micropost_path(@micropost), :method => :post %>
 									<%= @micropost.disliked_by.length %>
 								<% end %>
 							<% else %>
