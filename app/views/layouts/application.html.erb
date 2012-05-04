@@ -32,7 +32,18 @@
 	<%= yield %>
 
 	<div id="footer">
-		<p>Built by <%= link_to( image_tag("SixNode.png", :class =>"footerlogo", :mouseover => 		"SixNode---Over.png"), "http://sixno.de" )%></p>
+		<span id="terms">
+			<p>
+				    <%= link_to "Home", root_path %>
+				     <!-- <%= link_to "About", root_path %>
+				     				     <%= link_to "Terms", root_path %> -->
+				    <%= link_to "Facebook", "http://www.facebook.com/helpmedateyou" %>
+				    <%= link_to "Twitter", "http://www.twitter.com/helpmedateyou" %>
+			</p>
+		</span>
+		<span id="credit">
+		<p> ©2012 HelpMeDateYou - Toronto - <%= link_to( image_tag("SixNode.png", :class =>"footerlogo", :mouseover => 		"SixNode---Over.png"), "http://sixno.de" )%></p>
+		</span>
 	</div>
 
 	<script type="text/javascript">

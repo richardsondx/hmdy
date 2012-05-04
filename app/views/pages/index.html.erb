@@ -5,12 +5,40 @@
 			<nav class="menu_left">
 				<% if current_user %>
 					Welcome <%= current_user.name %>!
-					<%= link_to "Sign Out", signout_path %>
+					<%= link_to image_tag("signOutBtn.jpg", :class => "mylogo"), signout_path %>
 				<% else %>
 					<%= link_to image_tag('sign-in.png', :class => "mylogo"), "/auth/facebook"%>
 				<% end %>
 			</nav>
+			<!-- Drop down menu-->
 			
+			<!-- <div class="total_images" id="navigation">
+
+				<div class="eachs" id="link1"> 
+
+					<a href="#" class="menu" style=" width:90px;">99Points</a>
+
+					<img src="bg.png" alt="" width="140" height="140" class="images"/> 
+
+					<div> 
+						<ul>
+							<li><a href="http://www.99points.info/category/php/">PHP</a></li>
+							<li><a href="http://www.99points.info/category/codeigniter/">CodeIgniter</a></li>
+							<li><a href="http://www.99points.info/category/web-development/jquery/">JQuery</a></li>
+							<li><a href="http://www.99points.info/category/web-development/ajax/">AJAX</a></li>
+							<li><a href="http://www.99points.info/category/facebook/">Facebook</a></li>
+
+							<li><a href="http://www.99points.info/tag/youtube/">YOUTUBE</a></li>
+							<li><a href="http://www.99points.info/category/web-development/css/">CSS</a></li>
+							<li><a href="http://www.99points.info/category/mysql/">MYSQL</a></li>
+							<li><a href="http://www.99points.info/category/web-development/">Tutorials</a></li>
+						</ul>
+					</div>  
+				</div> 
+					<br clear="all" /><br clear="all" /><br clear="all" /><br clear="all" />
+
+			</div> -->
+			<!-- end of drop down menu-->
 			<nav class="menu_right">
 
 			</nav>
@@ -19,7 +47,7 @@
 		<div id="top_container">
 				<div class="fb-like sharelikelogo" data-href="http://www.helpmedateyou.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
 			<div class="logo_wrapper">
-				<%= link_to image_tag('logo.png'), root_path %>	
+				<%= link_to image_tag('logo_beta.png'), root_path %>	
 			</div>
 			
 			<div class="blackbox_wrapper_bg">
@@ -63,4 +91,5 @@ $(document).ready(function(){
     });
 });
 </script>
+
 
