@@ -57,8 +57,6 @@
 
 	</div>
 	<div class="slidingDiv<%= micropost.id %> fbsizeshow">
-			 <% @og_url = "http://www.helpmedateyou.com/pages/" + "#{micropost.id}" %>
-		    <% @og_description ="#{micropost.to_guys ? "one girl is saying: " : "one guy is saying: "}#{ micropost.content}" %>
 			<div id="container_main2" align="center">
 				<div class="fb-comments" data-href="http://www.helpmedateyou.com/pages/<%= micropost.id %>" data-num-posts="6" data-width="500"></div>
 			</div>
