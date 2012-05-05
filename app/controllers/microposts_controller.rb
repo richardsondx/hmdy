@@ -28,9 +28,6 @@ class MicropostsController < ApplicationController
     @og_site_name ="HelpMeDateYou.com | Share avice anonymously with guys and girls"
 
 
-    
-    
-    
   end
   
   def new
