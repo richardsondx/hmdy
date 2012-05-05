@@ -32,7 +32,7 @@
 							<%= link_to image_tag("Vote-Up-rollover.png"), like_micropost_path(micropost), :method => :delete%>
 							<%= micropost.liked_by.length %>
 						<% else %>
-							<%= link_to image_tag("Vote-Up-Button.png"), like_micropost_path(micropost), :method => :post %>
+							<%= link_to image_tag("Vote-Up-rollover.png"), like_micropost_path(micropost), :method => :post %>
 							<%= micropost.liked_by.length %>
 						<% end %>
 							
@@ -40,12 +40,12 @@
 							<%= link_to image_tag("Vote-Down-rollover.png"), dislike_micropost_path(micropost), :method => :delete %>
 							 <%= micropost.disliked_by.length %>
 						<% else %>
-							<%= link_to image_tag('Vote-Down-Button.png'), dislike_micropost_path(micropost), :method => :post %>
+							<%= link_to image_tag('Vote-Down-rollover.png'), dislike_micropost_path(micropost), :method => :post %>
 							<%= micropost.disliked_by.length %>
 						<% end %>
 					<% else %>
-						<%= link_to image_tag("Vote-Up-Button.png", :mouseover => "Vote-Up-rollover.png" ), "/auth/facebook" %> <%= micropost.liked_by.length unless Rails.env.development? %>
-						<%= link_to image_tag("Vote-Down-Button.png", :mouseover => "Vote-Down-rollover.png"), "/auth/facebook"%><%= micropost.disliked_by.length unless Rails.env.development? %>
+						<%= link_to image_tag("Vote-Up-rollover.png", :mouseover => "Vote-Up-rollover.png" ), "/auth/facebook" %> <%= micropost.liked_by.length unless Rails.env.development? %>
+						<%= link_to image_tag("Vote-Down-rollover.png", :mouseover => "Vote-Down-rollover.png"), "/auth/facebook"%><%= micropost.disliked_by.length unless Rails.env.development? %>
 					<% end %><span class="time">Posted <%= time_ago_in_words(micropost.created_at) %> ago.</span></p>
 							
 			</span>
