@@ -11,29 +11,25 @@
   <meta name="title" content="Guys and Girls tell you everything" />
 
 
-<meta property="fb:admins" content="500208454" />
-<meta property="og:title" content="HelpMeDateYou.com" />
+<meta property="fb:admins" content="<%= @fb_admins %>" />
+<meta property="og:title" content="<%= @og_title %>" />
+<meta property="og:url" content="<%= @og_url %>" />
+<meta property="og:description" content="<%= @og_description %>" />
+<meta property="og:type" content="<%= @og_type %>" />
+<meta property="og:image" content="<%= @og_image %>" />
+<meta property="og:site_name" content="<%= @og_site_name %>" />
 
-<meta property="og:type" content="website" />
-<meta property="og:image" content="http://i.imgur.com/Mij1Q.png" />
-<meta property="og:site_name" content="HelpMeDateYou.com | Share avice anonymously with guys and girls" />
 </head>
 <body>
 	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=109989265800865";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
+
 	
 	<%= yield %>
-
+	
 	<div id="footer">
 		<span id="terms">
 			<p>
-				    <%= link_to "Home", root_path %>
+				   <%= link_to "Home", root_path %>
 				     <!-- <%= link_to "About", root_path %>
 				     				     <%= link_to "Terms", root_path %> -->
 				    <%= link_to "Facebook", "http://www.facebook.com/helpmedateyou" %>
@@ -44,7 +40,14 @@
 		<p> ©2012 HelpMeDateYou - Toronto - <%= link_to( image_tag("SixNode.png", :class =>"footerlogo", :mouseover => 		"SixNode---Over.png"), "http://sixno.de" )%></p>
 		</span>
 	</div>
-
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=109989265800865";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	
 	<script type="text/javascript">
 	  var uvOptions = {};
 	  (function() {

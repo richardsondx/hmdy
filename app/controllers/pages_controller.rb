@@ -10,6 +10,15 @@ class PagesController < ApplicationController
   end
 
   def index
+    @fb_admins ="500208454"
+    @og_title ="HelpMeDateYou.com"
+    @og_url="http://www.helpmedateyou.com"
+    @og_description ="Share avice anonymously with guys and girls"
+    @og_type ="website"
+    @og_image ="http://i.imgur.com/Mij1Q.png"
+    @og_site_name ="HelpMeDateYou.com | Share avice anonymously with guys and girls"
+    
+    
     @title = "Home"
     @microposts = Micropost.paginate(:page => params[:page], :per_page => 20)
 

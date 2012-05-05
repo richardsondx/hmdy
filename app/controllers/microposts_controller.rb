@@ -18,6 +18,19 @@ class MicropostsController < ApplicationController
   
   def display
     @micropost = Micropost.find(params[:id])
+    
+    @fb_admins ="500208454"
+    @og_title ="HelpMeDateYou.com"
+    @og_url="http://www.helpmedateyou.com/" + "#{@micropost.id}"
+    @og_description ="#{@micropost.to_guys ? "one girl is saying: " : "one guy is saying: "}#{ @micropost.content}"
+    @og_type ="website"
+    @og_image ="http://i.imgur.com/Mij1Q.png"
+    @og_site_name ="HelpMeDateYou.com | Share avice anonymously with guys and girls"
+
+
+    
+    
+    
   end
   
   def new
