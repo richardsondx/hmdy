@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     @fb_app_id ="109989265800865"  
     @fb_admins ="500208454"
     @og_title ="HelpMeDateYou.com"
-    @og_url="http://www.helpmedateyou.com"
+    @og_url="helpmedateyou.com"
     @og_description ="Share avice anonymously with guys and girls"
     @og_type ="website"
     @og_image ="http://i.imgur.com/Mij1Q.png"
