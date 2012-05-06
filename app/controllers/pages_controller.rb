@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   end
 
   def index
+    @fb_app_id ="109989265800865"  
     @fb_admins ="500208454"
     @og_title ="HelpMeDateYou.com"
     @og_url="http://www.helpmedateyou.com"
