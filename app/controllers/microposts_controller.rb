@@ -18,6 +18,7 @@ class MicropostsController < ApplicationController
   
   def display
     @micropost = Micropost.find(params[:id])
+    @title == "Advice"
     
     @fb_admins ="500208454"
     @og_title ="HelpMeDateYou.com"
@@ -26,7 +27,6 @@ class MicropostsController < ApplicationController
     @og_type ="website"
     @og_image ="http://i.imgur.com/Mij1Q.png"
     @og_site_name ="HelpMeDateYou.com | Share avice anonymously with guys and girls"
-
 
   end
   

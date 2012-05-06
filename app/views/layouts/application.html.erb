@@ -9,7 +9,7 @@
   <link rel="image_src" href="http://i.imgur.com/Mij1Q.png"/>
   <meta property="fb:app_id" content="109989265800865" />  
   <meta name="title" content="Guys and Girls tell you everything" />
-
+  <% if @title == "Home" or @title == "Advice "%>
   <meta property="fb:admins" content="<%= @fb_admins %>" />
   <meta property="og:title" content="<%= @og_title %>" />
   <meta property="og:url" content="<%= @og_url %>" />
@@ -17,7 +17,15 @@
   <meta property="og:type" content="<%= @og_type %>" />
   <meta property="og:image" content="<%= @og_image %>" />
   <meta property="og:site_name" content="<%= @og_site_name %>" />
-	
+  <% else %>
+<meta property="fb:admins" content="500208454" />
+<meta property="og:title" content="HelpMeDateYou.com"/>
+<meta property="og:url" content="http://www.helpmedateyou.com"/>
+<meta property="og:description" content="Share avice anonymously with guys and girls"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="http://i.imgur.com/Mij1Q.png"/>
+<meta property="og:site_name" content="HelpMeDateYou.com | Share avice anonymously with guys and girls"/>
+  <% end %>
 
 </head>
 <body>
