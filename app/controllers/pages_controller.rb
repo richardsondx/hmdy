@@ -18,8 +18,7 @@ class PagesController < ApplicationController
     @og_type ="website"
     @og_image ="http://i.imgur.com/Mij1Q.png"
     @og_site_name ="HelpMeDateYou.com | Share avice anonymously with guys and girls"
-
-    
+   
     @title = "Home"
     @microposts = Micropost.paginate(:page => params[:page], :per_page => 20)
 

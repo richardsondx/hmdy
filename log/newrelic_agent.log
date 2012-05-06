@@ -34,3 +34,13 @@
 [05/05/12 22:35:20 -0400 osiris (714)] WARN : Agent configured not to send data in this environment - edit newrelic.yml to change this
 [05/05/12 22:35:20 -0400 osiris (714)] INFO : New Relic Ruby Agent 3.3.3 Initialized: pid = 714
 [05/05/12 22:35:20 -0400 osiris (714)] INFO : Agent Log at /Users/Richardson/rails_projects/gigiki/log/newrelic_agent.log
+[05/05/12 22:45:49 -0400 osiris (815)] INFO : Dispatcher: webrick
+[05/05/12 22:45:49 -0400 osiris (815)] INFO : Application: My Application
+[05/05/12 22:45:49 -0400 osiris (815)] WARN : Agent configured not to send data in this environment - edit newrelic.yml to change this
+[05/05/12 22:45:49 -0400 osiris (815)] INFO : New Relic Ruby Agent 3.3.3 Initialized: pid = 815
+[05/05/12 22:45:49 -0400 osiris (815)] INFO : Agent Log at /Users/Richardson/rails_projects/gigiki/log/newrelic_agent.log
+[05/05/12 22:48:37 -0400 osiris (840)] INFO : Dispatcher: webrick
+[05/05/12 22:48:37 -0400 osiris (840)] INFO : Application: My Application
+[05/05/12 22:48:37 -0400 osiris (840)] WARN : Agent configured not to send data in this environment - edit newrelic.yml to change this
+[05/05/12 22:48:37 -0400 osiris (840)] INFO : New Relic Ruby Agent 3.3.3 Initialized: pid = 840
+[05/05/12 22:48:37 -0400 osiris (840)] INFO : Agent Log at /Users/Richardson/rails_projects/gigiki/log/newrelic_agent.log

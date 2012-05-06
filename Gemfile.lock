@@ -72,6 +72,7 @@ GEM
     multipart-post (1.1.5)
     newrelic_rpm (3.3.3)
     nifty-generators (0.4.6)
+    nokogiri (1.4.6)
     oauth2 (0.6.1)
       faraday (~> 0.7)
       httpauth (~> 0.1)
@@ -84,6 +85,10 @@ GEM
     omniauth-oauth2 (1.0.2)
       oauth2 (~> 0.6.0)
       omniauth (~> 1.0)
+    opengraph (0.0.4)
+      hashie
+      nokogiri (~> 1.4.0)
+      rest-client (~> 1.6.0)
     pg (0.13.2)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -124,6 +129,8 @@ GEM
       vegas (~> 0.1.2)
     resque-loner (1.2.1)
       resque (~> 1.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     sass (3.1.16)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -166,6 +173,7 @@ DEPENDENCIES
   oauth2
   omniauth
   omniauth-facebook
+  opengraph
   pg
   rack-timeout
   rails (= 3.2.1)
