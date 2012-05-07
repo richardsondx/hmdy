@@ -8,11 +8,14 @@ Gigiki::Application.routes.draw do
 
  resources :microposts do
   member do
+    resources :comments
     get 'display'
   end
  end
  
- resources :users, :only => [:show, :create] do
+
+ 
+resources :users, :only => [:show, :create] do
    member do
      get 'liked'
      get 'disliked'

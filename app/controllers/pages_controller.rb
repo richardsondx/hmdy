@@ -21,6 +21,8 @@ class PagesController < ApplicationController
    
     @title = "Home"
     @microposts = Micropost.paginate(:page => params[:page], :per_page => 20)
+    
+
 
    # @microposts = Micropost.order("created_at").page(params[:page]).per(6)
   end

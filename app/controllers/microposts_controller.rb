@@ -87,7 +87,7 @@ class MicropostsController < ApplicationController
   
   def like
     @micropost = Micropost.find params[:id]
-
+    
       if current_user.like @micropost
         @liked = @micropost.liked_by.length 
         redirect_to :back

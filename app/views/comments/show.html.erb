@@ -1,0 +1,14 @@
+<h1>Comments#show</h1><Br/>
+<p>
+  <strong>body:</strong>
+  <%= @comment.body %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_micropost_path(@comment) %> |
+  <%= link_to "Destroy", @comment, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", comments_path %>
+</p>
+
+
+

@@ -6,6 +6,7 @@ class Micropost < ActiveRecord::Base
                       
   default_scope :order => 'microposts.created_at DESC'
   
+  has_many :comments
   # def self.feed(last)
   #   self.where("created_at < ? ", last).order('created_at desc').limit(5)
   # end

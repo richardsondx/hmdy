@@ -1,0 +1,11 @@
+<%= form_for @comment do |f| %>
+  <p>
+    <fieldset>
+	<legend> comment </legend>
+    <%= f.text_field :body %> <br/>
+    
+    <%= f.label "Share as:" %>
+    <%= f.submit "I'm a Guy" %>
+    </p>
+    </fieldset>
+<% end %>
