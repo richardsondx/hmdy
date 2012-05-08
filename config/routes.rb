@@ -7,9 +7,9 @@ Gigiki::Application.routes.draw do
  match "microposts/display/:id" => "microposts#display"
 
  resources :microposts do
-  member do
-    resources :comments
-    get 'display'
+   resources :comments
+   member do
+   get 'display'
   end
  end
  
@@ -35,6 +35,7 @@ resources :users, :only => [:show, :create] do
      delete 'ignore'  => :unignore
      post 'stash'
      delete 'stash'   => :unstash
+     post 'flagthis'
    end
  end
  

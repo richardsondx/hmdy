@@ -1,29 +1,49 @@
 class CommentsController < ApplicationController
+  
+  before_filter :initialize_micropost
+  
   def index
-    @micropost = Micropost.find(params[:id])
     @comments = @micropost.comments.all
   end
   
   def new
-    @micropost = Micropost.find(params[:id])
+
     @comment = @micropost.comments.new
   end
   
   def create
-   @micropost = Micropost.find(params[:id])
+
    @comment = @micropost.comments.create!(params[:comment])
    
-     if @comment.save
-        redirect_to(comments_path)
-        flash[:notice] = "Thanks! You have successfully posted this Comment."
+   
+   if @comment.asguys = params["commit"] == "I'm a Guy"
+      @comment.asguys = true
+         flash[:notice] = "to Guys was clicked and the boolean is updated"
       else
-        redirect_to(:back)
-        flash[:notice] = "Something went wrong. You're Comment wasn't created"
+         @comment.asguys = false
       end
+   
+   
+   
+     if @comment.save
+        redirect_to :back, :notice => "Comment successfully posted."
+      else
+        redirect_to :back , :notice => "Something went wrong."
+      end
+    rescue ActiveRecord::RecordInvalid
+     redirect_to :back , :notice =>"You're Comment was more than 140 characters"
+    
   end
   
   def update
-    @comment = Comment.find(params[:id])
+     if @comment.asguys = params["commit"] == "I'm a Guy"
+        @comment.asguys = true
+           flash[:notice] = "to Guys was clicked and the boolean is updated"
+        else
+           @comment.asguys = false
+        end
+
+    
     if @comment.update_attributes(params[:comment])
       redirect_to @comment, :notice  => "Successfully updated Comment."
     else
@@ -32,16 +52,24 @@ class CommentsController < ApplicationController
   end
   
   def edit
-    @comment = Comment.find(params[:id])
+    @comment = @micropost.comments.find(params[:id])
   end
   
   def destroy
-    @comment = Comment.find(params[:id])
+    @comment = @micropost.comments.find(params[:id])
     @comment.destroy
-    redirect_to comments_url, :notice => "Successfully destroyed Comment."
+    redirect_to micropost_comments_url, :notice => "Successfully destroyed Comment."
   end
   
   def show
-    @comment = Comment.find(params[:id])
+    @comment = @micropost.comments.find(params[:id])
   end
+  
+  private
+  
+  def initialize_micropost
+    @micropost = Micropost.find(params[:micropost_id])
+  end
+  
+ 
 end

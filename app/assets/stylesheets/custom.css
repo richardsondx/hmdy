@@ -14,6 +14,12 @@
 }
 */
 
+
+
+
+
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -280,7 +286,7 @@ span.votes_wrapper p{
 }
 span.comment_wrapper {
     float: right;
-    padding-right: 20px;
+    padding-right: 3px;
     text-align: right;
     width: 20%;
 }
@@ -306,10 +312,9 @@ span.comment_wrapper {
 }
 
 #container_main2 {
-    overflow: auto;
-	overflow-y: hidden;
-	-ms-overflow-y: hidden;
-	height: 300px;
+	overflow-y: auto;
+	-ms-overflow-y: auto;
+	height: 250px;
 }
 
 
@@ -415,7 +420,7 @@ span.comment_wrapper {
 
 span.votes_wrapper img{
 	padding-left: 10px;
-	padding-right: 7px;
+	padding-right: 5px;
 	vertical-align: middle;
 	margin: auto 0;
 }
@@ -441,11 +446,12 @@ span.votes_wrapper p{
 #footer{
         background: url(nav-bg.png);
         opacity: 0.9;
+        bottom:0px;
         position: fixed;
         width: 100%;
         padding-top: 2px;
         padding-right: 10px;
-		padding-bottom: 3px;
+	padding-bottom: 3px;
 }
 
 #terms{
@@ -469,6 +475,134 @@ span.votes_wrapper p{
 
 #credit{
         font-size: 14px;
-		font-family: "HelveticaLTStdRoman", "Times New Roman", Georgia, Serif;
+	font-family: "HelveticaLTStdRoman", "Times New Roman", Georgia, Serif;
+        float: right;    
 }
 
+
+
+.techfieldhere{
+    background: url('bubble-comment1.png') no-repeat;
+    padding-bottom: 15px;
+    width:70%;
+    display: inline-block;
+    float: left;
+    height: 43px;
+}
+
+.respondfield{
+    margin-left:59px;
+    vertical-align: middle;
+    width: 84%;
+    height: 34px;
+    background: none;
+    font-size: 14px;
+    border: none;
+    
+
+}
+
+.comment_buttons{
+    display: inline-block;
+    float: right;
+    
+}
+
+
+#comments_listed li{
+   
+   
+    
+}
+
+#comments_listed li:nth-child(odd) {
+    background: #f8ddc0;
+    font-size: 1em;
+    height: 70px;
+    text-align: left;
+    padding-left: 10px;
+    color: #966545;
+    font-family: "ITCFranklinGothicStdMedium", "Times New Roman", Georgia, Serif;
+}
+
+#comments_listed li:nth-child(even) {
+    background: #e6c6a3;
+    font-size: 1em;
+    height: 70px;
+    text-align: left;
+    padding-left: 10px;
+    color: #966545;
+    font-family: "ITCFranklinGothicStdMedium", "Times New Roman", Georgia, Serif;
+}
+
+#comments_listed p.com_comment{
+    font-size: 15px;
+    margin-top:1px;
+    display: inline-block;
+    positon: relative;
+    width: 500px;
+
+}
+
+#comments_listed p.com_time{
+    font-size: 10px;
+    display: inline-block;
+    position:relative;
+    float: right;
+    color: grey;
+}
+
+
+.asguys{
+	background: url("Btn-Girls.png") no-repeat;
+        background-size:82px 20px;
+	width: 82px;
+	height: 20px;
+	border: none;
+	text-indent: -9999px;
+}
+
+.asgirls{
+	background: url("Btn-Guys.png") no-repeat;
+        background-size:82px 20px;
+	width: 82px;
+	height: 20px;
+	border: none;
+	text-indent: -9999px;
+}
+
+#comments_listed img{
+    vertical-align: bottom;
+    padding-top: 5px;
+    padding-right: 10px;
+}
+
+#charsLeftcomment{
+    position: relative;
+    bottom: 34px;
+    left: 399px;
+    color: grey;
+    font-size: 13px;
+}
+
+
+.flash-message {
+  &.error {
+    border: solid 4px #900;
+          background-color: #FF6565;
+        }
+  &.notice {
+    border: solid 4px #26722D;
+          background-color: #A4E7A0;
+        }
+  color: black;
+  z-index: 999;
+  position: fixed;
+  font-weight: bold;
+  width: 96%;
+  margin: 20px;
+        p {
+                font-size: 110%;
+                margin: 15px 0;
+        }
+}

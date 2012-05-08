@@ -5,9 +5,9 @@
 </p>
 
 <p>
-  <%= link_to "Edit", edit_micropost_path(@comment) %> |
-  <%= link_to "Destroy", @comment, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", comments_path %>
+  <%= link_to "Edit", edit_micropost_comment_path(@micropost, @comment) %> |
+  <%= link_to "Destroy", [@micropost ,@comment], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", micropost_comments_path(@micropost) %>
 </p>
 
 

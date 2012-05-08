@@ -1,0 +1,12 @@
+<%= form_for [@micropost, Comment.new] do |f| %>
+  <p>
+    <fieldset>
+	<legend> comment </legend>
+    <%= f.text_field :body %> <br/>
+    
+    <%= f.label "Share as:" %>
+    <%= f.submit "I'm a Guy" %>
+	<%= f.submit "I'm a Girl" %>
+    </p>
+    </fieldset>
+<% end %>

@@ -13,3 +13,4 @@
 //= require 'jquery'
 //= require jquery_ujs
 //= require_tree
+$('.respondfield').limit('140','#charsLeftcomment');

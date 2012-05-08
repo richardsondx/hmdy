@@ -46,11 +46,9 @@ class MicropostsController < ApplicationController
        end
  
     if @micropost.save
-      redirect_to(:back)
-      flash[:notice] = "Thanks! You have successfully posted this Micropost."
+      redirect_to :back, :notice => "Thanks! You have successfully posted this Micropost."
     else
-      redirect_to(:back)
-      flash[:notice] = "Something went wrong. You're Micropost wasn't created"
+      redirect_to :back, :notice => "Something went wrong. You're Micropost wasn't created"
     end
   end
 
@@ -187,6 +185,19 @@ class MicropostsController < ApplicationController
         end
 
     end
+    
+  
+  def flagthis
+    @micropost = Micropost.find params[:id]
+   
+    @microposts.update_attribute(:flag, "1")
+    
+     if @micropost.update_attributes(params[:micropost])
+        redirect_to :back, :notice  => "Successfully Flagged that post."
+      else
+         redirect_to :back, :error => "it failled..."
+      end
+  end
   
   
   protected

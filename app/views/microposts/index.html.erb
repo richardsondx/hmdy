@@ -12,12 +12,14 @@
 <table>
   <tr>
     <th> Tellmewhatyouthink #</th>
+	<th> Flag </th>
     <th> content </th>
     <th> to guys </th>
   </tr>
   <%  for micropost in @all_microposts %>
    <tr>
       <td><%= micropost.id %></td>
+	  <th><%= micropost.flag %></td>
       <td><%= micropost.content %></td>
       <td><%= micropost.to_guys %></td>
       <td><%= link_to "Show", micropost %></td>

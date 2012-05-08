@@ -15,7 +15,20 @@
 
 			</nav>
 		</nav>
-		
+		<div id="fb-root"></div>
+		<% if notice || alert %>
+		  <div class="flash-message <%= notice ? "notice" : ""%><%= alert ? "error" : ""%>">
+		    <div class="container container_12 clearfix">
+		      <div class="grid_12">
+		        <% if notice %>
+		          <p><%= notice %></p>
+		        <% elsif alert %>
+		          <p><%= alert %></p>
+		        <% end %>
+		      </div>
+		    </div>
+		  </div>
+		<% end %>
 		<div id="top_container">
 				<div class="fb-like sharelikelogo" data-href="http://www.helpmedateyou.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
 			<div class="logo_wrapper">
@@ -63,7 +76,9 @@ $(document).ready(function(){
     });
 });
 </script>
-
+<script>
+$('.respondfield').limit('140','#charsLeftcomment');
+</script>
 
 
 

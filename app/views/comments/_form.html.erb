@@ -1,11 +1,16 @@
-<%= form_for @comment do |f| %>
+<%= form_for [micropost, Comment.new] do |f| %>
   <p>
     <fieldset>
-	<legend> comment </legend>
-    <%= f.text_field :body %> <br/>
-    
-    <%= f.label "Share as:" %>
-    <%= f.submit "I'm a Guy" %>
-    </p>
+		<div class="techfieldhere">
+    		<%= f.text_field :body, :class => "respondfield", :placeholder => "Respond in 140 characters"%><span id="charsLeftcomment"></span><script>
+			$('.respondfield').limit('140','#charsLeftcomment');
+			</script> <br/>
+		</div>
+    	<div class="comment_buttons">
+    		<%= f.label "Share as:" %><br/>
+    		<%= f.submit "I'm a Guy", :class => "asguys"%>
+			<%= f.submit "I'm a Girl", :class => "asgirls"%>
+		</div>
+    	</p>
     </fieldset>
 <% end %>

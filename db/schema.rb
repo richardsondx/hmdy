@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20120506200342) do
   create_table "comments", :force => true do |t|
     t.integer  "micropost_id"
     t.string   "body"
+    t.boolean  "asguys"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end

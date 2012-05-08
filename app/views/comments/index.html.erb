@@ -1,7 +1,7 @@
 <h1>Comment#index</h1>
 <p>Find me in app/views/comments/index.html.erb</p>
 <title><%= @title %> Post a comment</title>
-<p><%= link_to "Back to List", comments_path %></p>
+<p><%= link_to "Back to List", micropost_comments_path %></p>
 
 
 
@@ -15,11 +15,10 @@
    <tr>
       <td><%= comment.id %></td>
       <td><%= comment.body %></td>
-      <td><%= link_to "Show", comment %></td>
-      <td><%= link_to "Edit", edit_comment_path(comment) %></td>
-      <td><%= link_to "Destroy", comment, :confirm => 'Are you sure?', :method => :delete  %></td>
+      <td><%= link_to "Show", [@micropost, comment] %></td>
+      <td><%= link_to "Edit", edit_micropost_comment_path(@micropost, comment) %></td>
+      <td><%= link_to "Destroy", [@micropost, comment], :confirm => 'Are you sure?', :method => :delete  %></td>
    <% end %>
    </tr>
 </table>
-<p><%=  link_to "New comment", new_comment_path %></p>
-
+<p><%=  link_to "New comment", new_micropost_comment_path %></p>
