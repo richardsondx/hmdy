@@ -6,5 +6,5 @@ class Comment < ActiveRecord::Base
                       :length => { :maximum => 140 }
   
   
-  default_scope :order => 'comments.created_at DESC'
+  # default_scope :order => 'comments.created_at DESC'
 end
