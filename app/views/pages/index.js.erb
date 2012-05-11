@@ -1,8 +1,8 @@
 $('#microposts').append('<%= j render('microposts') %>');
 var micropostIds = [<%= @microposts.map {|micropost| micropost.id }.join(',') %>];
 $.each(micropostIds, function (index, value) {
-    $(".slidingDiv" + value).hide();
-    $(".show_hide" + value).show().click(function () {
+    // $(".slidingDiv" + value).hide();
+    $(".show_hide" + value).click(function () {
         $(".slidingDiv" + value).slideToggle();
 		// FB.XFBML.parse($(".slidingDiv" + value)[0]);
     });
