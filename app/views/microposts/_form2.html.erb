@@ -1,6 +1,6 @@
 <div class="textfield_wrapper">
 	<%= form_for @micropost do |f| %>
-		<%= f.text_field :content, :size => 140 , :class => "entry_text", :placeholder => "Share advice with guys or girls"%> 
+		<%= f.text_field :content, :size => 140 , :class => "entry_text", :placeholder => "Click here to say something to guys or girls...	"%> 
 		<p class="char_count_label">Characters: <strong class="char_count"><span id="charsLeft"></span></strong></p>
 		<script>
 		$('.entry_text').limit('140','#charsLeft');
@@ -9,7 +9,7 @@
 
 <div class="buttons_wrappers">
 
-	<%= f.submit "to Girls", :class => "togirls btn_wrap"%>
+	<%= f.submit "to Girls", :class => "togirls btn_wrap", :alt => "if you a guy sharing with girls"%>
 	<%= f.submit "to Guys", :class => "toguys btn_wrap" %>
 	
 	<% end %>

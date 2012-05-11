@@ -1,25 +1,3 @@
-
-/*.notification
-{
-    text-align: center;
-    display: none;
-    width: 100%;
-    position: fixed;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    margin: 0;
-    font-weight: bold;
-    font-size: 1.2em;
-    overflow: visible;
-}
-*/
-
-
-
-
-
-
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -298,28 +276,20 @@ span.comment_wrapper {
     width: 100%;
 }
 
-/*#footer {
-        opacity: 0.4;
-        filter: alpha(opacity=40);
-}*/
 
 /* DIV FOR COMMENTS */
 
 .comments_post{
     background: #f1d4b5;
     text-align:center;
-	overflow: visible;
-}
+
 
 #container_main2 {
-	overflow-y: auto;
-	-ms-overflow-y: auto;
-	height: 250px;
+
 }
 
 
 .fbsizeshow {
-    height:300px;
     background-color: #f1d4b5;
     padding:20px;
     margin-top:10px;
@@ -331,7 +301,7 @@ span.comment_wrapper {
 }
 
 
-/* FORM: toguys and togirls buttons */
+/* FORM toguys and togirls buttons */
 
 .toguys{
 	background: url("Btn-Guys.png") no-repeat;
@@ -475,7 +445,7 @@ span.votes_wrapper p{
 
 #credit{
         font-size: 14px;
-	font-family: "HelveticaLTStdRoman", "Times New Roman", Georgia, Serif;
+		font-family: "HelveticaLTStdRoman", "Times New Roman", Georgia, Serif;
         float: right;    
 }
 
@@ -498,7 +468,6 @@ span.votes_wrapper p{
     background: none;
     font-size: 14px;
     border: none;
-    
 
 }
 
@@ -510,8 +479,6 @@ span.votes_wrapper p{
 
 
 #comments_listed li{
-   
-   
     
 }
 
@@ -539,7 +506,7 @@ span.votes_wrapper p{
     font-size: 15px;
     margin-top:1px;
     display: inline-block;
-    positon: relative;
+    position: relative;
     width: 500px;
 
 }
@@ -586,6 +553,3 @@ span.votes_wrapper p{
 }
 
 
-.flash-message {
-
-}

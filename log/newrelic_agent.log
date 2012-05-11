@@ -625,3 +625,8 @@ unmatched close parenthesis: /div>
 [05/08/12 05:26:17 -0400 osiris (7403)] WARN : Agent configured not to send data in this environment - edit newrelic.yml to change this
 [05/08/12 05:26:17 -0400 osiris (7403)] INFO : New Relic Ruby Agent 3.3.3 Initialized: pid = 7403
 [05/08/12 05:26:17 -0400 osiris (7403)] INFO : Agent Log at /Users/Richardson/rails_projects/gigiki/log/newrelic_agent.log
+[05/11/12 02:59:16 -0400 osiris (31591)] INFO : Dispatcher: webrick
+[05/11/12 02:59:17 -0400 osiris (31591)] INFO : Application: My Application
+[05/11/12 02:59:17 -0400 osiris (31591)] WARN : Agent configured not to send data in this environment - edit newrelic.yml to change this
+[05/11/12 02:59:17 -0400 osiris (31591)] INFO : New Relic Ruby Agent 3.3.3 Initialized: pid = 31591
+[05/11/12 02:59:17 -0400 osiris (31591)] INFO : Agent Log at /Users/Richardson/rails_projects/gigiki/log/newrelic_agent.log
