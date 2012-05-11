@@ -50,13 +50,13 @@
 			</span>
 			<%= micropost.comments.count %> replies
 			<span class="comment_wrapper">
-				 <%= image_tag('Respond.png', :mouseover => "Respond-over.png", :class => "show_hide#{micropost.id}") %>
+				 <%= image_tag('Respond.png', :mouseover => "Respond-over.png", :class => "show_hide#{micropost.id}", :style => "#{micropost.comments.count != 0 ? "display: none" : ""}") %>
 			</span>
 		</div>
 			
 	</div>
 
-	<div class="slidingDiv<%= micropost.id %> fbsizeshow">
+	<div class="slidingDiv<%= micropost.id %> fbsizeshow" style="<%= micropost.comments.count == 0 ? "display: none" : "" %>">
 				
 					<%= render :partial => 'comments/form', :locals => { :micropost => micropost } %>
 					<div id="container_main2" align="center">
