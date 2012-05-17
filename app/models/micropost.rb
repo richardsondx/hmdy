@@ -5,6 +5,7 @@ class Micropost < ActiveRecord::Base
                       :length => { :maximum => 140 }
  
   default_scope :order => 'comments_count DESC, created_at DESC'
+
   # @microposts = Micropost.order('comments_count ASC').all
 
   has_many :comments
