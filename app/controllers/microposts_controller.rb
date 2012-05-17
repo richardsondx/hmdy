@@ -7,7 +7,7 @@ class MicropostsController < ApplicationController
     # last = params[:last].blank? ? Time.now + 1.second : 
     #    Time.parse(params[:last])
     #    @microposts = Micropost.feed(last)
-    @microposts = Micropost.order("name").page(params[:page]).per_page(1)
+    @microposts = Micropost.order("comments_count DESC").page(params[:page]).per_page(1)
     @all_microposts = Micropost.all
     @micropost = Micropost.new
   end

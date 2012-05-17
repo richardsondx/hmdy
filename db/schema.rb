@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120506200342) do
+ActiveRecord::Schema.define(:version => 20120517000628) do
 
   create_table "comments", :force => true do |t|
     t.integer  "micropost_id"
@@ -28,8 +28,9 @@ ActiveRecord::Schema.define(:version => 20120506200342) do
     t.string   "content"
     t.integer  "flag"
     t.integer  "liked"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.integer  "comments_count", :default => 0, :null => false
   end
 
   create_table "recommendable_dislikes", :force => true do |t|
