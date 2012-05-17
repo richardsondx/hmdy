@@ -59,8 +59,7 @@ resources :users, :only => [:show, :create] do
   get "pages/advertise"
   get "pages/terms"
   
-  
-
+  match "pages/find" => "pages#find"
 
 
   # The priority is based upon order of creation:

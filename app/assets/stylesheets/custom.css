@@ -429,3 +429,16 @@ span.votes_wrapper {
     left: 399px;
     position: relative;
 }
+
+
+.search_input_field{
+	padding-top: 4px;
+	padding-right: 100px;		
+}
+
+.search_button{
+	padding-top: 5px;
+	width: 100px;
+	height: 27px;
+	font-size: 0.9em;
+}	

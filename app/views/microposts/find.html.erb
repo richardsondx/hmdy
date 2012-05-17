@@ -1,0 +1,13 @@
+<hl> Listing advice for <%= params[:search_string] %></hl>
+
+<table>
+	<tr>
+		<th>Advice</th>
+	</tr>
+	
+	<% for micropost in @microposts %>
+		<tr>
+			<td><%=h micropost.content%></td>
+			<td><%= link_to "Show", micropost %></td>
+		</tr>
+	<% end %>

@@ -1,15 +1,16 @@
 class MicropostsController < ApplicationController
    # html basic authentification system for the admin session
    before_filter :authenticate , :except => [ :create, :new, :display,
-     :like, :unlike,:dislike, :undislike, :ignore, :unignore, :stach, :unstach]
+     :like, :unlike,:dislike, :undislike, :ignore, :unignore, :stach, :unstach, :find]
     
   def index
     # last = params[:last].blank? ? Time.now + 1.second : 
     #    Time.parse(params[:last])
     #    @microposts = Micropost.feed(last)
-    @microposts = Micropost.order("comments_count DESC").page(params[:page]).per_page(1)
-    @all_microposts = Micropost.all
+    # @microposts = Micropost.order("comments_count DESC").page(params[:page]).per_page(1)
+    # @all_microposts = Micropost.all
     @micropost = Micropost.new
+    @all_microposts = Micropost.search(params[:search])
   end
 
   def show

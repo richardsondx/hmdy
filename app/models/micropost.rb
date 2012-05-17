@@ -4,7 +4,10 @@ class Micropost < ActiveRecord::Base
   validates :content, :presence => true, 
                       :length => { :maximum => 140 }
  
-  default_scope :order => 'comments_count DESC, created_at DESC'
+  # default_scope :order => 'comments_count DESC, created_at DESC'
+  scope :popular, where('comments_count DESC, created_at DESC')
+  scope :recent, where('created_at DESC')
+  scope :fagged, where(:flag != "0")
 
   # @microposts = Micropost.order('comments_count ASC').all
 
@@ -12,4 +15,16 @@ class Micropost < ActiveRecord::Base
   # def self.feed(last)
   #   self.where("created_at < ? ", last).order('created_at desc').limit(5)
   # end
+  
+  def self.search(search, page)
+    paginate :per_page => 5, :page => page,
+               :conditions => ['content like ?', "%#{search}%"], :order => 'comments_count DESC, created_at DESC'
+    # if search
+    #       where('content LIKE?', "%#{search}%")
+    #     else
+    #       all
+    #     end
+  end
+
+  
 end
