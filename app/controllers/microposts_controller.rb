@@ -8,11 +8,9 @@ class MicropostsController < ApplicationController
     #    Time.parse(params[:last])
     #    @microposts = Micropost.feed(last)
     # @microposts = Micropost.order("comments_count DESC").page(params[:page]).per_page(1)
-    # @all_microposts = Micropost.all
+    @all_microposts = Micropost.all
     @micropost = Micropost.new
-    @all_microposts = Micropost.search(params[:search])
-    # @all_microposts.filter(params[:filter]).paginate(:page => params[:page])
-  end
+    end
 
   def show
     @micropost = Micropost.find(params[:id])
