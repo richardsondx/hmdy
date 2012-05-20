@@ -1,0 +1,78 @@
+<div id="container">
+	<section id="header_content">
+
+		<nav class="navigation">
+			<nav class="menu_left">
+				<% if current_user %>
+					Welcome <%= current_user.name %>!
+					<%= link_to image_tag("signOutBtn.jpg", :class => "mylogo"), signout_path %>
+				<% else %>
+					<%= link_to image_tag('sign-in.png', :class => "mylogo"), "/auth/facebook"%>
+				<% end %>
+				
+			</nav>
+
+			<nav class="menu_right">
+				<%= form_tag root_path, :class => "search_input_field", :method => 'get' do %>
+				
+					<%= text_field_tag :search, params[:search] %>
+					<%= submit_tag "Search", :name => nil , :class => "search_button"%>
+						
+				<% end %>	
+			</nav>
+		</nav>
+		<div id="fb-root"></div>
+		<% if notice || alert %>
+		  <div class="flash-message <%= notice ? "notice" : ""%><%= alert ? "error" : ""%>">
+		    <div class="container container_12 clearfix">
+		      <div class="grid_12">
+		        <% if notice %>
+		          <p><%= notice %></p>
+		        <% elsif alert %>
+		          <p><%= alert %></p>
+		        <% end %>
+		      </div>
+		    </div>
+		  </div>
+		<% end %>
+		<div id="top_container">
+				<div class="fb-like sharelikelogo" data-href="http://www.helpmedateyou.com" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+			<div class="logo_wrapper">
+				<%= link_to image_tag('logo_beta.png'), root_path %>	
+			</div>
+			
+			<div class="blackbox_wrapper_bg">
+				<div class="blackbox_wrapper_city">
+					<div class="blackbox_wrapper">
+						<% @micropost = Micropost.new %>
+						<%= render  :partial => 'microposts/form2', :locals => { :micropost => @micropost } %>
+					</div><ul>
+						<p class="filter_links"><br/>
+							[ <%= link_to "Popular", "popular", :style => "color: white;"  %> - 
+							<%= link_to "Recent", root_path %> ]						
+						</p>
+						</ul>
+				</div>
+			
+			</div>
+			
+			
+		</div>
+		
+	</section>	
+	
+	<section id="main_container">
+		
+		<div id="inside_main">
+			<article>
+				<div id="microposts">
+					<ul>
+						<%= render 'microposts' %>
+					</ul>
+				</div>
+				<div class="pagination">
+				<%= will_paginate @microposts %>
+				</div>
+			</article>
+	</section>
+</div>

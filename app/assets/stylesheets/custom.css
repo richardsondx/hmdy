@@ -442,3 +442,11 @@ span.votes_wrapper {
 	height: 27px;
 	font-size: 0.9em;
 }	
+
+.filter_links a:hover{
+	color: white;
+}
+
+.filter_links a{
+	color: black;
+}

@@ -20,9 +20,21 @@ class PagesController < ApplicationController
     @og_site_name ="HelpMeDateYou.com | Share avice anonymously with guys and girls"
    
     @title = "Home"
-    # @microposts = Micropost.paginate(:page => params[:page], :per_page => 20).order('comments_count DESC, created_at DESC')
-    @microposts = Micropost.search(params[:search], params[:page])
+    #@microposts = Micropost.paginate(:page => params[:page], :per_page => 20).order('comments_count DESC, created_at DESC')
+    
+    # searching 
+    @microposts = Micropost.order("created_at DESC").search(params[:search], params[:page])
+    # @microposts.filter(params[:filter]).paginate(:page => params[:page])
+    # 
+    #filtering the content0
+ 
     # @microposts = Micropost.order("created_at").page(params[:page]).per(6)
+
+  end
+  
+  def popular
+    @microposts = Micropost.search(params[:search], params[:page])
+  
   end
   
 end

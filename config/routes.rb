@@ -35,7 +35,10 @@ resources :users, :only => [:show, :create] do
      delete 'ignore'  => :unignore
      post 'stash'
      delete 'stash'   => :unstash
+     
      post 'flagthis'
+     get 'recent'
+     get 'popular'
    end
  end
  
@@ -47,6 +50,7 @@ resources :users, :only => [:show, :create] do
  match "advertise" => "pages#advertise"
  match "contact" => "pages#contact"
  match "terms" => "pages#terms"
+ match "popular" => "pages#popular"
  #set the liaision between the two pages and crate the path 'page_path'
  match "pages/:id" => "microposts#display" , :as => :page
 
@@ -58,9 +62,9 @@ resources :users, :only => [:show, :create] do
   get "pages/contact"
   get "pages/advertise"
   get "pages/terms"
-  
-  match "pages/find" => "pages#find"
+  get "pages/popular"
 
+  get "/filter/:filter", :controller => "pages", :action => "index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

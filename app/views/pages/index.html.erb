@@ -46,8 +46,12 @@
 					<div class="blackbox_wrapper">
 						<% @micropost = Micropost.new %>
 						<%= render  :partial => 'microposts/form2', :locals => { :micropost => @micropost } %>
-					</div>
-						<p><br/>POPULAR</p>
+					</div><ul>
+						<p class="filter_links"><br/>
+							[ <%= link_to "Popular", "popular" %> - 
+							<%= link_to "Recent", root_path, :style => "color: white;" %> ]						
+						</p>
+						</ul>
 				</div>
 			
 			</div>

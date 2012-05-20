@@ -11,6 +11,7 @@ class MicropostsController < ApplicationController
     # @all_microposts = Micropost.all
     @micropost = Micropost.new
     @all_microposts = Micropost.search(params[:search])
+    # @all_microposts.filter(params[:filter]).paginate(:page => params[:page])
   end
 
   def show
@@ -187,7 +188,6 @@ class MicropostsController < ApplicationController
 
     end
     
-  
   def flagthis
     @micropost = Micropost.find params[:id]
    
@@ -199,6 +199,9 @@ class MicropostsController < ApplicationController
          redirect_to :back, :error => "it failled..."
       end
   end
+  
+  
+  
   
   
   protected
